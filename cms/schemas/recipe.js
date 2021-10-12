@@ -20,7 +20,36 @@ export default {
       name: "ingredients",
       title: "Ingridients",
       type: "array",
-      of: [{ type: "reference", to: [{ type: "ingredient" }] }],
+      of: [
+        {
+          name: "ingredientForRecipe",
+          title: "Ingredient",
+          type: "object",
+          fields: [
+            {
+              name: "ingredient",
+              title: "Ingredient",
+              type: "reference",
+              to: [{ type: "ingredient" }],
+              description: "Ingredient",
+            },
+            {
+              name: "amount",
+              title: "Amount",
+              type: "number",
+              description: "Amounf of ingredient",
+            },
+            {
+              name: "unit",
+              title: "Unit",
+              type: "string",
+              description: "Unit ",
+            },
+          ],
+          description: "Ingredient for recipe",
+        },
+      ],
+
       description: "List of ingredients",
     },
     {
