@@ -1,11 +1,12 @@
 import React from "react";
+import { Text } from "@chakra-ui/layout";
 
 const Temperature = (props) => {
   const { temperature } = props;
   return (
-    <p>
+    <Text>
       {temperature.value} {temperature.unit}
-    </p>
+    </Text>
   );
 };
 

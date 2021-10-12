@@ -1,6 +1,6 @@
-import "./App.css";
 import sanityClient from "@sanity/client";
 import Recipe from "./Recipe/Recipe";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const App = () => {
   const client = sanityClient({
@@ -25,7 +25,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <Recipe />
+      <ChakraProvider>
+        <Recipe />
+      </ChakraProvider>
     </div>
   );
 };

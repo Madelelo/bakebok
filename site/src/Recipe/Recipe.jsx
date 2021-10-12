@@ -7,6 +7,8 @@ import Title from "./Title";
 import Temperature from "./Temperature";
 import Oven from "./Oven";
 import Pan from "./Pan";
+import { Box } from "@chakra-ui/react";
+import { Center, Flex } from "@chakra-ui/layout";
 
 const fake = {
   title: "Apple Banana Pie",
@@ -25,20 +27,22 @@ const fake = {
 
 const Recipe = () => {
   return (
-    <>
-      <header>
-        <Title title={fake.title} />
-        <Description description={fake.description} />
-      </header>
+    <Center>
+      <Flex direction="column">
+        <Box border="1px" borderColor="blue">
+          <Title title={fake.title} />
+          <Description description={fake.description} />
+        </Box>
 
-      <Ingredients ingredients={fake.ingredients} />
-      <Instructions instructions={fake.instructions} />
+        <Ingredients ingredients={fake.ingredients} />
+        <Instructions instructions={fake.instructions} />
 
-      <Cooktime cooktime={fake.cooktime} />
-      <Temperature temperature={fake.temperature} />
-      <Oven oven={fake.oven} />
-      <Pan pan={fake.pan} />
-    </>
+        <Cooktime cooktime={fake.cooktime} />
+        <Temperature temperature={fake.temperature} />
+        <Oven oven={fake.oven} />
+        <Pan pan={fake.pan} />
+      </Flex>
+    </Center>
   );
 };
 
