@@ -10,11 +10,84 @@ export default {
       description: "Name of recipe",
     },
     {
+      name: "description",
+      title: "Description",
+      type: "string",
+      description: "Description of recipe",
+    },
+
+    {
       name: "ingredients",
       title: "Ingridients",
       type: "array",
       of: [{ type: "reference", to: [{ type: "ingredient" }] }],
       description: "List of ingredients",
+    },
+    {
+      name: "cooktime",
+      title: "Cooktime ",
+      type: "string",
+      description: "Cooking time in minutes",
+    },
+    {
+      name: "oven",
+      title: "Oven",
+      type: "string",
+      description: "Oven settings (varmluft, over/under etc.",
+    },
+    {
+      name: "instructions",
+      title: "Instructions",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "instruction" }] }],
+      description: "List of instructions",
+    },
+    {
+      name: "temperature",
+      title: "Temperature",
+      type: "object",
+      fields: [
+        {
+          name: "value",
+          title: "Value",
+          type: "number",
+          description: "Temp value",
+        },
+        {
+          name: "unit",
+          title: "Unit",
+          type: "number",
+          description: "Temp unit",
+        },
+      ],
+      description: "Cooking temp",
+    },
+    {
+      name: "pan",
+      title: "Pan",
+      type: "object",
+      fields: [
+        {
+          name: "shape",
+          title: "Shape",
+          type: "string",
+          description: "Pan shape",
+        },
+        {
+          name: "size_value",
+          title: "Size_value",
+          type: "number",
+          description: "Pan size value",
+        },
+        {
+          name: "size_unit",
+          title: "Size unit",
+          type: "string",
+          description: "Pan size unit (cm, in)",
+        },
+      ],
+
+      description: "Pan measuements",
     },
   ],
   preview: {

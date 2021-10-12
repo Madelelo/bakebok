@@ -5,6 +5,7 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 import recipe from "./recipe";
 import ingredient from "./ingredient";
+import instruction from "./instruction";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -16,5 +17,6 @@ export default createSchema({
     /* Your types here! */
     recipe,
     ingredient,
+    instruction,
   ]),
 });
