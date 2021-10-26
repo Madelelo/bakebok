@@ -25,22 +25,25 @@ const fake = {
   instructions: ["Mix", "Bake", "Plate", "Serve", "Eat"],
 };
 
-const Recipe = () => {
+const Recipe = (props) => {
+  const { recipe } = props;
+  console.log(recipe);
+
   return (
     <Center>
       <Flex direction="column">
         <Box border="1px" borderColor="blue">
-          <Title title={fake.title} />
-          <Description description={fake.description} />
+          <Title name={recipe.name} />
+          <Description description={recipe.description} />
         </Box>
 
-        <Ingredients ingredients={fake.ingredients} />
-        <Instructions instructions={fake.instructions} />
+        <Ingredients ingredients={recipe.ingredients} />
+        <Instructions instructions={recipe.instructions} />
 
-        <Cooktime cooktime={fake.cooktime} />
-        <Temperature temperature={fake.temperature} />
-        <Oven oven={fake.oven} />
-        <Pan pan={fake.pan} />
+        {/* <Cooktime cooktime={recipe.cooktime} />
+        <Temperature temperature={recipe.temperature} />
+        <Oven oven={recipe.oven} />
+        <Pan pan={recipe.pan} /> */}
       </Flex>
     </Center>
   );

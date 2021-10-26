@@ -85,7 +85,7 @@ export default {
         {
           name: "unit",
           title: "Unit",
-          type: "number",
+          type: "string",
           description: "Temp unit",
         },
       ],

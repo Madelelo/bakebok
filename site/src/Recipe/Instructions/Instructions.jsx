@@ -4,10 +4,14 @@ import Instruction from "./Instruction";
 const Instructions = (props) => {
   const { instructions } = props;
 
+  if (!instructions) {
+    return null;
+  }
+
   return (
     <>
-      {instructions.map((instruction, index) => (
-        <Instruction key={instruction + index} instruction={instruction} />
+      {instructions.map((instruction) => (
+        <Instruction key={instruction._key} instructionKey={instruction} />
       ))}
     </>
   );
