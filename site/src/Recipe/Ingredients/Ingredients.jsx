@@ -7,8 +7,11 @@ const Ingredients = (props) => {
 
   return (
     <Box bg="teal" w="100%" p={4} color="white" alignContent="center">
-      {ingredients.map((ingredient) => (
-        <Ingredient key={ingredient._key} ingredient={ingredient} />
+      {ingredients.map((ingredientForRecipe) => (
+        <Ingredient
+          key={ingredientForRecipe.ingredient}
+          ingredientForRecipe={ingredientForRecipe}
+        />
       ))}
     </Box>
   );

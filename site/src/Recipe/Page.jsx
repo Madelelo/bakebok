@@ -7,10 +7,15 @@ const Page = () => {
   const { client } = useSanityContext();
   const [data, setData] = useState([]);
 
-  const recipeQuery = '*[_type == "recipe"]';
+  const recipeQuery = `
+  *[ _type == "recipe" ]{
+    name, description, cooktime, oven, temperature, pan,
+    instructions[]-> {_id, name},
+    ingredients[]{amount, unit, ingredient-> {name, _id}},
+  }
+  `;
 
   useEffect(() => {
-    console.log("client", client);
     if (client.fetch) {
       client
         .fetch(recipeQuery)

@@ -40,10 +40,10 @@ const Recipe = (props) => {
         <Ingredients ingredients={recipe.ingredients} />
         <Instructions instructions={recipe.instructions} />
 
-        {/* <Cooktime cooktime={recipe.cooktime} />
+        <Cooktime cooktime={recipe.cooktime} />
         <Temperature temperature={recipe.temperature} />
         <Oven oven={recipe.oven} />
-        <Pan pan={recipe.pan} /> */}
+        <Pan pan={recipe.pan} />
       </Flex>
     </Center>
   );
