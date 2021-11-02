@@ -11,7 +11,7 @@ const Instructions = (props) => {
   return (
     <>
       {instructions.map((instruction) => (
-        <Instruction key={instruction._key} instructionKey={instruction} />
+        <Instruction key={instruction._id} instruction={instruction} />
       ))}
     </>
   );

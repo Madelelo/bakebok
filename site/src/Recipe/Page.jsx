@@ -26,7 +26,7 @@ const Page = () => {
           console.error(error);
         });
     }
-  }, [client]);
+  }, [client, setData, recipeQuery]);
 
   if (!data.length) {
     return <> Fetching from server</>;

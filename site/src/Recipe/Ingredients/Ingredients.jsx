@@ -9,7 +9,7 @@ const Ingredients = (props) => {
     <Box bg="teal" w="100%" p={4} color="white" alignContent="center">
       {ingredients.map((ingredientForRecipe) => (
         <Ingredient
-          key={ingredientForRecipe.ingredient}
+          key={ingredientForRecipe.ingredient._id}
           ingredientForRecipe={ingredientForRecipe}
         />
       ))}

@@ -27,7 +27,6 @@ const fake = {
 
 const Recipe = (props) => {
   const { recipe } = props;
-  console.log(recipe);
 
   return (
     <Center>
