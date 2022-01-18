@@ -2,6 +2,7 @@ import React from "react";
 import { useSanityContext } from "../SanityContext";
 import { useState, useEffect } from "react";
 import Recipe from "./Recipe";
+import RecipeList from "./RecipeList";
 
 const Page = () => {
   const { client } = useSanityContext();
@@ -33,7 +34,7 @@ const Page = () => {
   }
   return (
     <>
-      <Recipe recipe={data[0]} />
+      <RecipeList recipeList={data} />
     </>
   );
 };

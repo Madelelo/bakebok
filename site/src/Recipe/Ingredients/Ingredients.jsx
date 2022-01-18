@@ -7,9 +7,9 @@ const Ingredients = (props) => {
 
   return (
     <Box bg="teal" w="100%" p={4} color="white" alignContent="center">
-      {ingredients.map((ingredientForRecipe) => (
+      {ingredients.map((ingredientForRecipe, index) => (
         <Ingredient
-          key={ingredientForRecipe.ingredient._id}
+          key={`${ingredientForRecipe.ingredient._id}-${index}`}
           ingredientForRecipe={ingredientForRecipe}
         />
       ))}

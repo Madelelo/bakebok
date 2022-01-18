@@ -10,20 +10,21 @@ import Pan from "./Pan";
 import { Box } from "@chakra-ui/react";
 import { Center, Flex } from "@chakra-ui/layout";
 
-const fake = {
-  title: "Apple Banana Pie",
-  description: "nomnomnom.",
-  ingredients: [
-    { text: "Apple", id: 1 },
-    { text: "Banana", id: 2 },
-    { text: "Pie", id: 3 },
-  ],
-  cooktime: "20 min",
-  temperature: { value: 200, unit: "C" },
-  oven: "varmluft",
-  pan: { shape: "Round", size_value: 20, size_unit: "cm" },
-  instructions: ["Mix", "Bake", "Plate", "Serve", "Eat"],
-};
+//IKKE I BRUK
+//const fake = {
+//   title: "Apple Banana Pie",
+//   description: "nomnomnom.",
+//   ingredients: [
+//     { text: "Apple", id: 1 },
+//     { text: "Banana", id: 2 },
+//     { text: "Pie", id: 3 },
+//   ],
+//   cooktime: "20 min",
+//   temperature: { value: 200, unit: "C" },
+//   oven: "varmluft",
+//   pan: { shape: "Round", size_value: 20, size_unit: "cm" },
+//   instructions: ["Mix", "Bake", "Plate", "Serve", "Eat"],
+// };
 
 const Recipe = (props) => {
   const { recipe } = props;
