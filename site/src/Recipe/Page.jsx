@@ -3,6 +3,7 @@ import { useSanityContext } from "../SanityContext";
 import { useState, useEffect } from "react";
 import Recipe from "./Recipe";
 import RecipeList from "./RecipeList";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Page = () => {
   const { client } = useSanityContext();
@@ -32,10 +33,26 @@ const Page = () => {
   if (!data.length) {
     return <> Fetching from server</>;
   }
+
   return (
     <>
-      <RecipeList recipeList={data} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<RecipeList recipeList={data} />} />
+          <Route path="recipe/:recipeId" element={<Recipe recipes={data} />} />
+
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
+
 export default Page;

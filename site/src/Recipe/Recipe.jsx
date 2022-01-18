@@ -9,6 +9,7 @@ import Oven from "./Oven";
 import Pan from "./Pan";
 import { Box } from "@chakra-ui/react";
 import { Center, Flex } from "@chakra-ui/layout";
+import { useParams } from "react-router-dom";
 
 //IKKE I BRUK
 //const fake = {
@@ -27,7 +28,14 @@ import { Center, Flex } from "@chakra-ui/layout";
 // };
 
 const Recipe = (props) => {
-  const { recipe } = props;
+  const { recipes } = props;
+  const { recipeId } = useParams();
+
+  if (!recipes) {
+    return null;
+  }
+
+  const recipe = recipes[recipeId];
 
   return (
     <Center>

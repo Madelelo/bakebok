@@ -1,5 +1,6 @@
 import React from "react";
-import { VStack, StackDivider, Box, Link } from "@chakra-ui/layout";
+import { VStack, StackDivider, Box } from "@chakra-ui/layout";
+import { Link } from "react-router-dom";
 
 const RecipeList = (props) => {
   const { recipeList } = props;
@@ -10,9 +11,9 @@ const RecipeList = (props) => {
       spacing={4}
       align="stretch"
     >
-      {recipeList.map((recipe) => (
-        <Link h="40px" bg="blue.200" to="/home">
-          {recipe.name}
+      {recipeList.map((recipe, index) => (
+        <Link key={`${recipe._id}-${index}`} to={`/recipe/${index}`}>
+          {recipe.name}{" "}
         </Link>
       ))}
     </VStack>
