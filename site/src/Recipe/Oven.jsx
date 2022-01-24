@@ -4,7 +4,7 @@ import { Text } from "@chakra-ui/layout";
 const Oven = (props) => {
   const { oven } = props;
 
-  if (!ovene) {
+  if (!oven) {
     return null;
   }
 
