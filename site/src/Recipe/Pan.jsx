@@ -3,6 +3,11 @@ import { Text } from "@chakra-ui/layout";
 
 const Pan = (props) => {
   const { pan } = props;
+
+  if (!pan) {
+    return null;
+  }
+
   return (
     <Text>
       {pan.shape} {pan.size_value} {pan.size_unit}

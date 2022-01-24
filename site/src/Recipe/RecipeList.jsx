@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 const RecipeList = (props) => {
   const { recipeList } = props;
 
+  if (!recipeList) {
+    return null;
+  }
+
   return (
     <VStack
       divider={<StackDivider borderColor="gray.200" />}

@@ -4,6 +4,10 @@ import React from "react";
 const Ingredient = (props) => {
   const { ingredientForRecipe } = props;
 
+  if (!ingredientForRecipe.ingredient) {
+    return null;
+  }
+
   return (
     <Text>
       {ingredientForRecipe.ingredient.name} {ingredientForRecipe.amount}{" "}
