@@ -8,7 +8,7 @@ const Description = (props) => {
     return null;
   }
 
-  return <Text>{description}</Text>;
+  return <Text>Description: {description}</Text>;
 };
 
 export default Description;

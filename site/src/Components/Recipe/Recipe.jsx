@@ -41,7 +41,7 @@ const Recipe = (props) => {
     <Center>
       <Flex direction="column">
         <Box border="1px" borderColor="blue">
-          <Title name={recipe.name} />
+          <Title title={recipe.name} />
           <Description description={recipe.description} />
         </Box>
 

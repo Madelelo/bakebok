@@ -1,6 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { SanityProvider } from "./SanityContext";
-import Page from "./Recipe/Page";
+import Page from "./Components/Page";
 import { BrowserRouter } from "react-router-dom";
 
 const App = () => {

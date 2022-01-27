@@ -1,8 +1,9 @@
 import React from "react";
 import { useSanityContext } from "../SanityContext";
 import { useState, useEffect } from "react";
-import Recipe from "./Recipe";
-import RecipeList from "./RecipeList";
+import Recipe from "./Recipe/Recipe";
+import RecipeList from "./Recipe/RecipeList";
+import Navbar from "./Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Page = () => {
@@ -37,6 +38,7 @@ const Page = () => {
   return (
     <>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<RecipeList recipeList={data} />} />
           <Route path="recipe/:recipeId" element={<Recipe recipes={data} />} />
