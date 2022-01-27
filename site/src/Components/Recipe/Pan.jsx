@@ -10,7 +10,7 @@ const Pan = (props) => {
 
   return (
     <Text>
-      {pan.shape} {pan.size_value} {pan.size_unit}
+      Form: {pan.shape} {pan.size_value} {pan.size_unit}
     </Text>
   );
 };

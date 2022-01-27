@@ -10,7 +10,7 @@ const Temperature = (props) => {
 
   return (
     <Text>
-      {temperature?.value} {temperature?.unit}
+      Tempratur: {temperature?.value} {temperature?.unit}
     </Text>
   );
 };

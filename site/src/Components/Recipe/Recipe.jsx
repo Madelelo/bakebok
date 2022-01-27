@@ -40,18 +40,21 @@ const Recipe = (props) => {
   return (
     <Center>
       <Flex direction="column">
-        <Box border="1px" borderColor="blue">
+        <Box>
           <Title title={recipe.name} />
           <Description description={recipe.description} />
         </Box>
 
         <Ingredients ingredients={recipe.ingredients} />
+
         <Instructions instructions={recipe.instructions} />
 
-        <Cooktime cooktime={recipe.cooktime} />
-        <Temperature temperature={recipe.temperature} />
-        <Oven oven={recipe.oven} />
-        <Pan pan={recipe.pan} />
+        <Box p="4" maxW="sm" borderWidth="1px" overflow="hidden">
+          <Cooktime cooktime={recipe.cooktime} />
+          <Temperature temperature={recipe.temperature} />
+          <Oven oven={recipe.oven} />
+          <Pan pan={recipe.pan} />
+        </Box>
       </Flex>
     </Center>
   );

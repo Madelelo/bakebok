@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "@chakra-ui/layout";
+import { Flex, Box } from "@chakra-ui/layout";
 
 const Instruction = (props) => {
   const { instruction } = props;
@@ -8,7 +8,10 @@ const Instruction = (props) => {
     return null;
   }
 
-  return <Text>{instruction.name}</Text>;
+  return (
+    <Flex spacing="10px">
+      <Box p="1">{instruction.name}</Box>
+    </Flex>
+  );
 };
-
 export default Instruction;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "@chakra-ui/layout";
+import { Box } from "@chakra-ui/layout";
 
 const Cooktime = (props) => {
   const { cooktime } = props;
@@ -8,7 +8,7 @@ const Cooktime = (props) => {
     return null;
   }
 
-  return <Text>{cooktime}</Text>;
+  return <Box>Tid i ovn: {cooktime} minutter</Box>;
 };
 
 export default Cooktime;

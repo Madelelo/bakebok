@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "@chakra-ui/layout";
+import { Box } from "@chakra-ui/layout";
 
 const Oven = (props) => {
   const { oven } = props;
@@ -8,7 +8,7 @@ const Oven = (props) => {
     return null;
   }
 
-  return <Text>{oven}</Text>;
+  return <Box> Type ovn: {oven}</Box>;
 };
 
 export default Oven;

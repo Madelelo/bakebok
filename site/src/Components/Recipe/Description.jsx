@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "@chakra-ui/layout";
+import { Container } from "@chakra-ui/layout";
 
 const Description = (props) => {
   const { description } = props;
@@ -8,7 +8,7 @@ const Description = (props) => {
     return null;
   }
 
-  return <Text>Description: {description}</Text>;
+  return <Container maxw="container.lg">Description: {description}</Container>;
 };
 
 export default Description;

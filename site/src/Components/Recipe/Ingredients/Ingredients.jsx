@@ -1,6 +1,6 @@
 import React from "react";
 import Ingredient from "./Ingredient";
-import { Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 const Ingredients = (props) => {
   const { ingredients } = props;
@@ -10,7 +10,9 @@ const Ingredients = (props) => {
   }
 
   return (
-    <Box bg="teal" w="100%" p={4} color="white" alignContent="center">
+    <Box p="4" maxW="md" borderWidth="1px" overflow="hidden">
+      <Text fontSize="xl"> Ingredienser:</Text>
+
       {ingredients.map((ingredientForRecipe, index) => (
         <Ingredient
           key={`${ingredientForRecipe.ingredient}-${index}`}

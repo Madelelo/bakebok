@@ -1,4 +1,4 @@
-import { Text } from "@chakra-ui/layout";
+import { Box, Flex } from "@chakra-ui/layout";
 import React from "react";
 
 const Ingredient = (props) => {
@@ -9,10 +9,11 @@ const Ingredient = (props) => {
   }
 
   return (
-    <Text>
-      {ingredientForRecipe.ingredient.name} {ingredientForRecipe.amount}{" "}
-      {ingredientForRecipe.unit}
-    </Text>
+    <Flex spacing="10px">
+      <Box p="1">{ingredientForRecipe.amount}</Box>
+      <Box p="1">{ingredientForRecipe.unit}</Box>
+      <Box p="1"> {ingredientForRecipe.ingredient.name}</Box>
+    </Flex>
   );
 };
 
