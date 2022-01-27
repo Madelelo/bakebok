@@ -5,6 +5,7 @@ import Recipe from "./Recipe/Recipe";
 import RecipeList from "./Recipe/RecipeList";
 import Navbar from "./Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Spinner } from "@chakra-ui/react";
 
 const Page = () => {
   const { client } = useSanityContext();
@@ -32,7 +33,7 @@ const Page = () => {
   }, [client, setData, recipeQuery]);
 
   if (!data.length) {
-    return <> Fetching from server</>;
+    return <Spinner m="10" p="4" color="teal" />;
   }
 
   return (
