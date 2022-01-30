@@ -1,4 +1,5 @@
 import { Box, Flex } from "@chakra-ui/layout";
+import { Grid, GridItem } from "@chakra-ui/react";
 import React from "react";
 
 const Ingredient = (props) => {
@@ -9,11 +10,11 @@ const Ingredient = (props) => {
   }
 
   return (
-    <Flex spacing="10px">
-      <Box p="1">{ingredientForRecipe.amount}</Box>
-      <Box p="1">{ingredientForRecipe.unit}</Box>
-      <Box p="1"> {ingredientForRecipe.ingredient.name}</Box>
-    </Flex>
+    <Grid templateColumns="1fr 1fr 60%" gap={1}>
+      <GridItem align="right">{ingredientForRecipe.amount}</GridItem>
+      <GridItem>{ingredientForRecipe.unit}</GridItem>
+      <GridItem>{ingredientForRecipe.ingredient.name} </GridItem>
+    </Grid>
   );
 };
 

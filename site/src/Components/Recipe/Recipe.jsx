@@ -2,14 +2,11 @@ import React from "react";
 import Ingredients from "./Ingredients/Ingredients";
 import Instructions from "./Instructions/Instructions";
 import Description from "./Description";
-import Cooktime from "./Cooktime";
 import Title from "./Title";
-import Temperature from "./Temperature";
-import Oven from "./Oven";
-import Pan from "./Pan";
-import { Box } from "@chakra-ui/react";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 import { Center, Flex } from "@chakra-ui/layout";
 import { useParams } from "react-router-dom";
+import Specifications from "./Specs/Specifications";
 
 //IKKE I BRUK
 //const fake = {
@@ -36,26 +33,36 @@ const Recipe = (props) => {
   }
 
   const recipe = recipes[recipeId];
-
+  console.log();
   return (
     <Center>
-      <Flex direction="column">
-        <Box>
-          <Title title={recipe.name} />
-          <Description description={recipe.description} />
-        </Box>
-
-        <Ingredients ingredients={recipe.ingredients} />
-
-        <Instructions instructions={recipe.instructions} />
-
-        <Box p="4" maxW="sm" borderWidth="1px" overflow="hidden">
-          <Cooktime cooktime={recipe.cooktime} />
-          <Temperature temperature={recipe.temperature} />
-          <Oven oven={recipe.oven} />
-          <Pan pan={recipe.pan} />
-        </Box>
-      </Flex>
+      <Grid
+        h="200px"
+        templateRows="repeat(2, 1fr)"
+        templateColumns="repeat(6, 1fr)"
+        gap={4}
+      >
+        <GridItem colSpan={6} bg="lightgray">
+          <Box>
+            <Title title={recipe.name} />
+            <Description description={recipe.description} />
+          </Box>
+        </GridItem>
+        <GridItem colSpan={3} bg="lightgray">
+          <Ingredients ingredients={recipe.ingredients} />
+        </GridItem>
+        <GridItem colSpan={3} bg="lightgray">
+          <Specifications
+            cooktime={recipe.cooktime}
+            pan={recipe.pan}
+            temperature={recipe.temperature}
+            oven={recipe.oven}
+          />
+        </GridItem>
+        <GridItem colSpan={6} bg="lightgray">
+          <Instructions instructions={recipe.instructions} />
+        </GridItem>
+      </Grid>
     </Center>
   );
 };
