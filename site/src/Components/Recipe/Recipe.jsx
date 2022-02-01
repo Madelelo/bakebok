@@ -3,11 +3,10 @@ import Ingredients from "./Ingredients/Ingredients";
 import Instructions from "./Instructions/Instructions";
 import Description from "./Description";
 import Title from "./Title";
-import { Box, Grid, GridItem } from "@chakra-ui/react";
-import { Center, Flex } from "@chakra-ui/layout";
+import { Container, Box, Grid, GridItem } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import Specifications from "./Specs/Specifications";
-import InfoBox from "../Styling/InfoBox";
+import InfoBox, { InfoBoxFull } from "../Styling/InfoBox";
 
 const Recipe = (props) => {
   const { recipes } = props;
@@ -20,19 +19,19 @@ const Recipe = (props) => {
   const recipe = recipes[recipeId];
   console.log();
   return (
-    <Center maxW="xl">
+    <Container maxW="3xl">
       <Grid
         h="200px"
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(6, 1fr)"
         gap={4}
       >
-        <GridItem colSpan={6} bg="lightgray">
+        <InfoBoxFull>
           <Box>
             <Title title={recipe.name} />
             <Description description={recipe.description} />
           </Box>
-        </GridItem>
+        </InfoBoxFull>
 
         <InfoBox>
           <Ingredients ingredients={recipe.ingredients} />
@@ -47,11 +46,11 @@ const Recipe = (props) => {
           />
         </InfoBox>
 
-        <GridItem colSpan={6} bg="lightgray">
+        <InfoBoxFull>
           <Instructions instructions={recipe.instructions} />
-        </GridItem>
+        </InfoBoxFull>
       </Grid>
-    </Center>
+    </Container>
   );
 };
 

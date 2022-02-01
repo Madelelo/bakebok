@@ -11,7 +11,7 @@ const Instructions = (props) => {
 
   return (
     <>
-      <Box p="4" maxW="sm" borderWidth="1px" overflow="hidden">
+      <Box>
         <Text fontSize="xl"> Instruksjoner:</Text>
 
         {instructions.map((instruction) => (

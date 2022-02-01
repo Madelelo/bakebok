@@ -12,3 +12,13 @@ const InfoBox = (props) => {
 };
 
 export default InfoBox;
+
+export const InfoBoxFull = (props) => {
+  const { children } = props;
+
+  return (
+    <GridItem colSpan={6} bg="lightblue" p={5}>
+      {children}
+    </GridItem>
+  );
+};
