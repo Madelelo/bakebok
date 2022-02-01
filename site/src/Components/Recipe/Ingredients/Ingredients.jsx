@@ -10,7 +10,7 @@ const Ingredients = (props) => {
   }
 
   return (
-    <Box p="4" maxW="md" borderWidth="1px" overflow="hidden">
+    <Box>
       <Text fontSize="xl"> Ingredienser:</Text>
 
       {ingredients.map((ingredientForRecipe, index) => (
