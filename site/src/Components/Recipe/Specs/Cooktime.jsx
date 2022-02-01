@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, Icon } from "@chakra-ui/react";
+import { GiSandsOfTime } from "react-icons/gi";
 
 const Cooktime = (props) => {
   const { cooktime } = props;
@@ -10,7 +11,10 @@ const Cooktime = (props) => {
 
   return (
     <Grid templateColumns="1fr 50%" gap={2}>
-      <GridItem align="right"> Tid i ovn: </GridItem>
+      <GridItem align="right">
+        <Icon as={GiSandsOfTime} />
+        Tid i ovn:{" "}
+      </GridItem>
       <GridItem>{cooktime} minutter</GridItem>
     </Grid>
   );

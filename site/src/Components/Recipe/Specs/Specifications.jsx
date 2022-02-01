@@ -8,7 +8,6 @@ import Pan from "./Pan";
 const Specifications = (props) => {
   const { cooktime, temperature, pan, oven } = props;
 
-  //Perhaps better with flexbox??
   return (
     <Grid templateRows="repeat(4, 1fr)" gap={-1}>
       <GridItem>
