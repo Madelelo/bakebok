@@ -8,6 +8,7 @@ import {
   Text,
 } from "@chakra-ui/layout";
 import { Link } from "react-router-dom";
+import ButtonBox from "../Styling/ButtonBox";
 
 const RecipeList = (props) => {
   const { recipeList } = props;
@@ -27,9 +28,7 @@ const RecipeList = (props) => {
         <VStack spacing={8} align="stretch">
           {recipeList.map((recipe, index) => (
             <Link key={`${recipe._id}-${index}`} to={`/recipe/${index}`}>
-              <Box p={5} shadow="md" borderWidth="1px">
-                {recipe.name}
-              </Box>
+              <ButtonBox>{recipe.name}</ButtonBox>
             </Link>
           ))}
         </VStack>

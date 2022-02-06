@@ -1,6 +1,7 @@
 import React from "react";
-import { Grid, GridItem, Icon } from "@chakra-ui/react";
+import { Flex, Text, Icon } from "@chakra-ui/react";
 import { GiAbstract055 } from "react-icons/gi";
+import { InfoBoxSpecs } from "../../Styling/InfoBox";
 const Oven = (props) => {
   const { oven } = props;
 
@@ -9,13 +10,10 @@ const Oven = (props) => {
   }
 
   return (
-    <Grid templateColumns="1fr 50%" gap={2}>
-      <GridItem align="right">
-        <Icon as={GiAbstract055} />
-        Type ovn:{" "}
-      </GridItem>
-      <GridItem>{oven} </GridItem>
-    </Grid>
+    <InfoBoxSpecs>
+      <Icon as={GiAbstract055} color="dpink" />
+      <Text>Type ovn: {oven} </Text>
+    </InfoBoxSpecs>
   );
 };
 

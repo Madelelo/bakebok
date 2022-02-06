@@ -1,10 +1,10 @@
 import React from "react";
-import { Heading } from "@chakra-ui/layout";
+import { Text } from "@chakra-ui/react";
 
 const Title = (props) => {
   const { title } = props;
 
-  return <Heading p="5"> {title}</Heading>;
+  return <Text textStyle="h2"> {title}</Text>;
 };
 
 export default Title;

@@ -1,6 +1,7 @@
 import React from "react";
-import { Grid, GridItem, Icon } from "@chakra-ui/react";
+import { Flex, Text, Icon } from "@chakra-ui/react";
 import { GiSandsOfTime } from "react-icons/gi";
+import { InfoBoxSpecs } from "../../Styling/InfoBox";
 
 const Cooktime = (props) => {
   const { cooktime } = props;
@@ -10,13 +11,10 @@ const Cooktime = (props) => {
   }
 
   return (
-    <Grid templateColumns="1fr 50%" gap={2}>
-      <GridItem align="right">
-        <Icon as={GiSandsOfTime} />
-        Tid i ovn:{" "}
-      </GridItem>
-      <GridItem>{cooktime} minutter</GridItem>
-    </Grid>
+    <InfoBoxSpecs>
+      <Icon as={GiSandsOfTime} color="dpink" />
+      <Text> Tid i ovn: {cooktime} minutter</Text>
+    </InfoBoxSpecs>
   );
 };
 
