@@ -21,6 +21,7 @@ const Recipe = (props) => {
   return (
     <Container maxW="3xl">
       <Grid
+        m={4}
         h="200px"
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(6, 1fr)"

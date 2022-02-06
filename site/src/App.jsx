@@ -13,8 +13,22 @@ const theme = extendTheme({
     yellow: "#F7B32B",
     lpink: "#FFE0D6",
     mpink: "#EF767A",
-    dpinnk: "#C83E4D",
+    dpink: "#C83E4D",
     black: "#120303",
+  },
+  textStyles: {
+    h1: {
+      fontSize: { base: "0px", md: "30px", lg: "40px" },
+      fontWeight: "bold",
+      lineHeight: "110%",
+      letterSpacing: "-2%",
+    },
+    h2: {
+      fontSize: ["36px", "48px"],
+      fontWeight: "semibold",
+      lineHeight: "110%",
+      letterSpacing: "-1%",
+    },
   },
   shadows: {
     pink: "3px 3px 0px 1px #FFE0D6",
