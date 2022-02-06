@@ -1,6 +1,7 @@
 import React from "react";
-import { Grid, GridItem, Icon } from "@chakra-ui/react";
+import { Text, Icon } from "@chakra-ui/react";
 import { GiResize } from "react-icons/gi";
+import { InfoBoxSpecs } from "../../Styling/InfoBox";
 const Pan = (props) => {
   const { pan } = props;
 
@@ -9,14 +10,12 @@ const Pan = (props) => {
   }
 
   return (
-    <Grid templateColumns="1fr 50%" gap={2}>
-      <GridItem align="right">
-        <Icon as={GiResize} /> Form:
-      </GridItem>
-      <GridItem>{pan.shape} </GridItem>
-      <GridItem align="right"> Størrelse: </GridItem>
-      <GridItem>{pan.size} </GridItem>
-    </Grid>
+    <InfoBoxSpecs>
+      <Icon as={GiResize} color="dpink" /> Form:
+      <Text>{pan.shape} </Text>
+      <Text> Størrelse: </Text>
+      <Text>{pan.size} </Text>
+    </InfoBoxSpecs>
   );
 };
 

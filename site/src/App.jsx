@@ -17,22 +17,43 @@ const theme = extendTheme({
     black: "#120303",
   },
   textStyles: {
-    h1: {
+    h1_icon: {
       fontSize: { base: "0px", md: "30px", lg: "40px" },
       fontWeight: "bold",
       lineHeight: "110%",
       letterSpacing: "-2%",
     },
-    h2: {
-      fontSize: ["36px", "48px"],
-      fontWeight: "semibold",
+    h1: {
+      fontSize: { base: "14px", md: "30px", lg: "40px" },
+      fontWeight: "bold",
       lineHeight: "110%",
+      letterSpacing: "-2%",
+    },
+    h2: {
+      fontSize: { base: "10px", md: "20px", lg: "30px" },
+      fontWeight: "semibold",
+      lineHeight: "100%",
       letterSpacing: "-1%",
+      textColor: "dteal",
+    },
+    h3: {
+      fontWeight: "semibold",
+      lineHeight: "80%",
+      textColor: "mpink",
+    },
+    body_list: {
+      fontSize: { base: "8px", md: "8px", lg: "14px" },
+      lineHeight: "150%",
+      textColor: "black",
+    },
+    body: {
+      fontSize: { base: "8px", md: "8px", lg: "14px" },
+      textColor: "black",
     },
   },
   shadows: {
     pink: "3px 3px 0px 1px #FFE0D6",
-    blue: "3px 3px 0px 1px #83C5BE",
+    teal: "3px 3px 0px 1px #83C5BE",
     yellow: "3px 3px 0px 1px #F7B32B",
   },
   layerStyles: {
@@ -44,7 +65,7 @@ const theme = extendTheme({
     blueShadow: {
       bg: "transparent",
       border: "2px solid #006D77",
-      boxShadow: "blue",
+      boxShadow: "teal",
     },
   },
   components: {},

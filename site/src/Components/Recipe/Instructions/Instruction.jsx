@@ -10,7 +10,9 @@ const Instruction = (props) => {
 
   return (
     <Flex spacing="10px">
-      <Box p="1">{instruction.name}</Box>
+      <Box p="1" textStyle="body">
+        {instruction.name}
+      </Box>
     </Flex>
   );
 };

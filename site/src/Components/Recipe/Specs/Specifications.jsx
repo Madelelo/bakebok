@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, GridItem, Flex } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Divider, Text } from "@chakra-ui/react";
 import Cooktime from "./Cooktime";
 import Temperature from "./Temperature";
 import Oven from "./Oven";
@@ -9,20 +9,12 @@ const Specifications = (props) => {
   const { cooktime, temperature, pan, oven } = props;
 
   return (
-    <Grid templateRows="repeat(4, 1fr)" gap={-1}>
-      <GridItem>
-        <Cooktime cooktime={cooktime} />
-      </GridItem>
-      <GridItem>
-        <Temperature temperature={temperature} />
-      </GridItem>
-      <GridItem>
-        <Oven oven={oven} />
-      </GridItem>
-      <GridItem>
-        <Pan pan={pan} />
-      </GridItem>
-    </Grid>
+    <Flex p="10" justify="center" flexFlow="row wrap">
+      <Cooktime cooktime={cooktime} />
+      <Temperature temperature={temperature} />
+      <Oven oven={oven} />
+      <Pan pan={pan} />
+    </Flex>
   );
 };
 
