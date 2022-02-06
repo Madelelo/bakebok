@@ -6,7 +6,7 @@ import Title from "./Title";
 import { Container, Box, Grid, GridItem } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import Specifications from "./Specs/Specifications";
-import InfoBox, { InfoBoxFull } from "../Styling/InfoBox";
+import InfoBox, { InfoBoxFull, InfoBoxHead } from "../Styling/InfoBox";
 
 const Recipe = (props) => {
   const { recipes } = props;
@@ -26,12 +26,12 @@ const Recipe = (props) => {
         templateColumns="repeat(6, 1fr)"
         gap={4}
       >
-        <InfoBoxFull>
+        <InfoBoxHead>
           <Box>
             <Title title={recipe.name} />
             <Description description={recipe.description} />
           </Box>
-        </InfoBoxFull>
+        </InfoBoxHead>
 
         <InfoBox>
           <Ingredients ingredients={recipe.ingredients} />

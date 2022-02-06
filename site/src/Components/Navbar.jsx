@@ -6,7 +6,7 @@ import { GiCupcake } from "react-icons/gi";
 
 const Navbar = () => {
   return (
-    <Flex bg="navy" w="100%" p={4} color="white" p="4">
+    <Flex bg="brand.100" w="100%" p={4} color="white" p="4">
       <Link to="/">
         <Icon as={GiCupcake} m={2} />
         Bakeboka
