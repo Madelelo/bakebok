@@ -18,7 +18,7 @@ const Navbar = () => {
         <Text textStyle="h1" color="dteal">
           Bakeboka
         </Text>
-      </Flex>{" "}
+      </Flex>
       <Divider
         orientation="horizontal"
         p={0.5}
