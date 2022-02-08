@@ -21,37 +21,37 @@ const Recipe = (props) => {
   return (
     <Flex direction="column" align="center">
       <Container maxW="3xl">
-      <Grid
-        m={4}
-        templateRows="repeat(2, 1fr)"
-        templateColumns="repeat(6, 1fr)"
-        gap={4}
-      >
-        <InfoBoxHead>
-          <Box>
-            <Title title={recipe.name} />
-            <Description description={recipe.description} />
-          </Box>
-        </InfoBoxHead>
+        <Grid
+          m={4}
+          templateRows="repeat(3)"
+          templateColumns="repeat(6, 1fr)"
+          gap={4}
+        >
+          <InfoBoxHead>
+            <Box>
+              <Title title={recipe.name} />
+              <Description description={recipe.description} />
+            </Box>
+          </InfoBoxHead>
 
-        <InfoBox>
-          <Ingredients ingredients={recipe.ingredients} />
-        </InfoBox>
+          <InfoBox>
+            <Ingredients ingredients={recipe.ingredients} />
+          </InfoBox>
 
-        <InfoBox>
-          <Specifications
-            cooktime={recipe.cooktime}
-            pan={recipe.pan}
-            temperature={recipe.temperature}
-            oven={recipe.oven}
-          />
-        </InfoBox>
+          <InfoBox>
+            <Specifications
+              cooktime={recipe.cooktime}
+              pan={recipe.pan}
+              temperature={recipe.temperature}
+              oven={recipe.oven}
+            />
+          </InfoBox>
 
-        <InfoBoxFull>
-          <Instructions instructions={recipe.instructions} />
-        </InfoBoxFull>
-      </Grid>
-    </Container>
+          <InfoBoxFull>
+            <Instructions instructions={recipe.instructions} />
+          </InfoBoxFull>
+        </Grid>
+      </Container>
     </Flex>
   );
 };

@@ -5,7 +5,7 @@ const InfoBox = (props) => {
   const { children } = props;
 
   return (
-    <GridItem colSpan={3} p={5} layerStyle="pinkShadow">
+    <GridItem colSpan={{ base: 6, sm: 3 }} p={5} layerStyle="pinkShadow">
       {children}
     </GridItem>
   );
@@ -37,7 +37,7 @@ export const InfoBoxSpecs = (props) => {
   const { children } = props;
 
   return (
-    <Flex align="center" justify="center" p={3} textStyle="body">
+    <Flex px="8" align="center" textStyle="body">
       {children}
     </Flex>
   );

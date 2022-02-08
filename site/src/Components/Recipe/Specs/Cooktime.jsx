@@ -1,7 +1,8 @@
 import React from "react";
-import { Flex, Text, Icon } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { GiSandsOfTime } from "react-icons/gi";
 import { InfoBoxSpecs } from "../../Styling/InfoBox";
+import StyledIcon from "../../Styling/StyledComponents";
 
 const Cooktime = (props) => {
   const { cooktime } = props;
@@ -12,7 +13,7 @@ const Cooktime = (props) => {
 
   return (
     <InfoBoxSpecs>
-      <Icon as={GiSandsOfTime} color="dpink" />
+      <StyledIcon icon={GiSandsOfTime} />
       <Text> Tid i ovn: {cooktime} minutter</Text>
     </InfoBoxSpecs>
   );

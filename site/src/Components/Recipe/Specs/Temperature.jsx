@@ -1,7 +1,8 @@
 import React from "react";
-import { Grid, Text, Icon } from "@chakra-ui/react";
+import { Flex, Text, Icon } from "@chakra-ui/react";
 import { GiHeatHaze } from "react-icons/gi";
 import { InfoBoxSpecs } from "../../Styling/InfoBox";
+import StyledIcon from "../../Styling/StyledComponents";
 
 const Temperature = (props) => {
   const { temperature } = props;
@@ -12,11 +13,13 @@ const Temperature = (props) => {
 
   return (
     <InfoBoxSpecs>
-      <Icon as={GiHeatHaze} color="dpink" />
-      <Text>Tempratur: </Text>
-      <Text>
-        {temperature?.value} {temperature?.unit}
-      </Text>
+      <StyledIcon icon={GiHeatHaze} />
+      <Flex justify="row">
+        <Text>Tempratur: </Text>
+        <Text>
+          {temperature?.value} {temperature?.unit}
+        </Text>
+      </Flex>
     </InfoBoxSpecs>
   );
 };

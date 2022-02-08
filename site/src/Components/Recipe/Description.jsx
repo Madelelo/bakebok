@@ -8,7 +8,7 @@ const Description = (props) => {
     return null;
   }
 
-  return <Container maxw="container.lg">Description: {description}</Container>;
+  return <Container maxw="container.lg"> {description}</Container>;
 };
 
 export default Description;

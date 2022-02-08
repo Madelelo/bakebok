@@ -9,7 +9,7 @@ const Specifications = (props) => {
   const { cooktime, temperature, pan, oven } = props;
 
   return (
-    <Flex p="10" justify="center" flexFlow="row wrap">
+    <Flex justify="end" flexFlow="column wrap">
       <Cooktime cooktime={cooktime} />
       <Temperature temperature={temperature} />
       <Oven oven={oven} />
