@@ -14,11 +14,8 @@ const Pan = (props) => {
   return (
     <InfoBoxSpecs>
       <StyledIcon icon={GiResize} />
-      <Flex justify="row" align="center">
-        Form:
-        <Text>{pan.shape} </Text>
-        <Text> Størrelse: </Text>
-        <Text>{pan.size} </Text>
+      <Flex justify="row" align="center" wrap="wrap">
+        <Text> {pan.shape} </Text>
       </Flex>
     </InfoBoxSpecs>
   );
