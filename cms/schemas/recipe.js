@@ -1,3 +1,5 @@
+import ingredient from "./ingredient";
+
 export default {
   name: "recipe",
   title: "Recipe",
@@ -27,13 +29,6 @@ export default {
           type: "object",
           fields: [
             {
-              name: "ingredient",
-              title: "Ingredient",
-              type: "reference",
-              to: [{ type: "ingredient" }],
-              description: "Ingredient",
-            },
-            {
               name: "amount",
               title: "Amount",
               type: "number",
@@ -44,9 +39,44 @@ export default {
               title: "Unit",
               type: "string",
               description: "Unit ",
+              options: {
+                list: [
+                  { title: "ss", value: "ss" },
+                  { title: "ts", value: "ts" },
+                  { title: "cup", value: "cup" },
+                  { title: "gram", value: "gram" },
+                  { title: "stk", value: "stk" },
+                  { title: "dæsj", value: "dæsj" },
+                  { title: "dl", value: "dl " },
+                  { title: "L", value: "L" },
+                ],
+              },
+            },
+            {
+              name: "ingredient",
+              title: "Ingredient",
+              type: "reference",
+              to: [{ type: "ingredient" }],
+              description: "Ingredient",
             },
           ],
           description: "Ingredient for recipe",
+          preview: {
+            select: {
+              ingredient: "ingredient.name",
+              unit: "unit",
+              amount: "amount",
+            },
+
+            prepare(selection) {
+              const { ingredient, unit, amount } = selection;
+
+              return {
+                title: `${amount} ${unit} ${ingredient}`,
+                media: "",
+              };
+            },
+          },
         },
       ],
 
@@ -63,6 +93,13 @@ export default {
       title: "Oven",
       type: "string",
       description: "Oven settings (varmluft, over/under etc.",
+      options: {
+        list: [
+          { title: "Varmluft", value: "Varmluft" },
+          { title: "Over/under", value: "Over/under" },
+          { title: "Kombo", value: "Kombo" },
+        ],
+      },
     },
     {
       name: "instructions",
@@ -87,6 +124,12 @@ export default {
           title: "Unit",
           type: "string",
           description: "Temp unit",
+          options: {
+            list: [
+              { title: "C", value: "C" },
+              { title: "F", value: "F" },
+            ],
+          },
         },
       ],
       description: "Cooking temp",
@@ -104,7 +147,7 @@ export default {
         },
         {
           name: "size_value",
-          title: "Size_value",
+          title: "Size value",
           type: "number",
           description: "Pan size value",
         },
@@ -113,6 +156,12 @@ export default {
           title: "Size unit",
           type: "string",
           description: "Pan size unit (cm, in)",
+          options: {
+            list: [
+              { title: "in", value: "in" },
+              { title: "cm", value: "cm" },
+            ],
+          },
         },
       ],
 
