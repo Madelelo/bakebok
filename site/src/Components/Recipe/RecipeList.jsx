@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  VStack,
-  StackDivider,
-  Container,
-  Box,
-  Heading,
-  Text,
-} from "@chakra-ui/layout";
+import { VStack, Container } from "@chakra-ui/layout";
 import { Link } from "react-router-dom";
 import ButtonBox from "../Styling/ButtonBox";
 

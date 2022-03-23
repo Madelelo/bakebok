@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Grid, GridItem } from "@chakra-ui/react";
+import { Flex, GridItem } from "@chakra-ui/react";
 
 const InfoBox = (props) => {
   const { children } = props;

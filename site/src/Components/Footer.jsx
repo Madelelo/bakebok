@@ -1,5 +1,6 @@
 import React from "react";
-import { Flex, Text, Divider, Box } from "@chakra-ui/react";
+import { Flex, Text, Divider } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -14,6 +15,9 @@ const Footer = () => {
       <Text textStyle="body_list" color="mteal" p={5}>
         av Madeleine Lorås, 2022
       </Text>
+      <Link to="/about">
+        <Text>Mer om bakeboka her</Text>
+      </Link>
     </Flex>
   );
 };
