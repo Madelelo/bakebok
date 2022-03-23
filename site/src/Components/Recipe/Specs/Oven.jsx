@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Text, Icon } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { GiAbstract055 } from "react-icons/gi";
 import { InfoBoxSpecs } from "../../Styling/InfoBox";
 import StyledIcon from "../../Styling/StyledComponents";

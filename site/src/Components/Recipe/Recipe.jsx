@@ -3,7 +3,7 @@ import Ingredients from "./Ingredients/Ingredients";
 import Instructions from "./Instructions/Instructions";
 import Description from "./Description";
 import Title from "./Title";
-import { Container, Box, Grid, GridItem, Flex } from "@chakra-ui/react";
+import { Container, Box, Grid, Flex } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import Specifications from "./Specs/Specifications";
 import InfoBox, { InfoBoxFull, InfoBoxHead } from "../Styling/InfoBox";
