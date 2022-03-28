@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Spinner, Text, Container, Grid, Box } from "@chakra-ui/react";
+import { Flex, Spinner, Container } from "@chakra-ui/react";
 import { useSanityContext } from "../SanityContext";
 import { useState, useEffect } from "react";
 import { PageH1, PageH2 } from "./Styling/PageBox";

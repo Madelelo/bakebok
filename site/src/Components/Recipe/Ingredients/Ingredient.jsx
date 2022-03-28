@@ -8,13 +8,39 @@ const Ingredient = (props) => {
     return null;
   }
 
+  const { unit, amount } = convertIfCup(ingredientForRecipe);
+
   return (
     <Grid templateColumns="1fr 1fr 60%" gap={1} textStyle="body_list">
-      <GridItem align="right">{ingredientForRecipe.amount}</GridItem>
-      <GridItem>{ingredientForRecipe.unit}</GridItem>
+      <GridItem align="right">{amount}</GridItem>
+      <GridItem>{unit}</GridItem>
       <GridItem>{ingredientForRecipe.ingredient.name} </GridItem>
     </Grid>
   );
 };
 
 export default Ingredient;
+
+const convertToGrams = (amountInCups, cupInGrams) => {
+  if (amountInCups != null) {
+    return amountInCups * cupInGrams;
+  }
+  return amountInCups;
+};
+
+const convertIfCup = (ingredientForRecipe) => {
+  let unit = ingredientForRecipe.unit;
+  let amount = ingredientForRecipe.amount;
+
+  if (
+    ingredientForRecipe.unit === "cup" &&
+    ingredientForRecipe.ingredient.cupconverter != null
+  ) {
+    unit = "gram";
+    amount = convertToGrams(
+      amount,
+      ingredientForRecipe.ingredient.cupconverter
+    );
+  }
+  return { unit, amount };
+};

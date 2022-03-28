@@ -17,7 +17,7 @@ const Page = () => {
   *[ _type == "recipe" ]{
     name, description, cooktime, oven, temperature, pan,
     instructions[]-> {_id, name},
-    ingredients[]{amount, unit, ingredient-> {name, _id}},
+    ingredients[]{amount, unit, ingredient-> {name, cupconverter, _id}},
   }
   `;
 
