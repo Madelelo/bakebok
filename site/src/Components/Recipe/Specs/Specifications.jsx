@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Grid, GridItem, Divider, Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import Cooktime from "./Cooktime";
 import Temperature from "./Temperature";
 import Oven from "./Oven";

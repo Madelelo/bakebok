@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box, Spinner } from "@chakra-ui/react";
 import Footer from "./Footer";
+import About from "./About";
 
 const Page = () => {
   const { client } = useSanityContext();
@@ -44,6 +45,7 @@ const Page = () => {
         <Routes>
           <Route path="/" element={<RecipeList recipeList={data} />} />
           <Route path="recipe/:recipeId" element={<Recipe recipes={data} />} />
+          <Route path="/about" element={<About />} />
 
           <Route
             path="*"
@@ -54,9 +56,9 @@ const Page = () => {
             }
           />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
-      </Box>
+    </Box>
   );
 };
 

@@ -1,5 +1,4 @@
-import { Box, Flex } from "@chakra-ui/layout";
-import { Divider, Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import React from "react";
 
 const Ingredient = (props) => {
