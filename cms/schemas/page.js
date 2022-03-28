@@ -18,14 +18,14 @@ export default {
     {
       name: "intro",
       title: "Intro",
-      type: "string",
-      description: "Introduction",
+      type: "text",
+      rows: 3,
     },
     {
       name: "body",
       title: "Body",
-      type: "string",
-      description: "Main body",
+      type: "text",
+      row: 6,
     },
     {
       name: "image",

@@ -17,7 +17,7 @@ export const PageH1 = (props) => {
   const { children } = props;
 
   return (
-    <Text fontSize="20px" fontWeight="bold" paddingTop="10">
+    <Text fontSize="25px" fontWeight="bold" paddingTop="10" paddingBottom="5">
       {children}
     </Text>
   );
@@ -26,5 +26,9 @@ export const PageH1 = (props) => {
 export const PageH2 = (props) => {
   const { children } = props;
 
-  return <Text fontSize="15px">{children}</Text>;
+  return (
+    <Text fontSize="16px" fontWeight="semibold" paddingBottom={5}>
+      {children}
+    </Text>
+  );
 };

@@ -1,8 +1,8 @@
 import React from "react";
-import { Flex, Spinner, Text, Container, Grid } from "@chakra-ui/react";
+import { Flex, Spinner, Text, Container, Grid, Box } from "@chakra-ui/react";
 import { useSanityContext } from "../SanityContext";
 import { useState, useEffect } from "react";
-import { PageH1 } from "./Styling/PageBox";
+import { PageH1, PageH2 } from "./Styling/PageBox";
 import PageText from "./Styling/PageBox";
 
 const About = () => {
@@ -31,12 +31,15 @@ const About = () => {
     return <Spinner m="10" p="4" color="teal" />;
   }
 
+  console.log(data[0].intro);
   return (
-    <Flex direction="column" justifyContent="center" alignItems="center">
-      <PageH1>{data[0].title}</PageH1>
-      <PageText> {data[0].intro}</PageText>
-      <PageText> {data[0].body}</PageText>
-    </Flex>
+    <Container width="3xl">
+      <Flex direction="column" justifyContent="center" alignItems="center">
+        <PageH1>{data[0].title}</PageH1>
+        <PageH2> {data[0].intro}</PageH2>
+        <PageText> {data[0].body}</PageText>
+      </Flex>
+    </Container>
   );
 };
 
