@@ -1,17 +1,19 @@
 import React from "react";
-import { Flex, Spinner, Text } from "@chakra-ui/react";
+import { Flex, Spinner, Text, Container, Grid } from "@chakra-ui/react";
 import { useSanityContext } from "../SanityContext";
 import { useState, useEffect } from "react";
+import { PageH1 } from "./Styling/PageBox";
+import PageText from "./Styling/PageBox";
 
 const About = () => {
   const { client } = useSanityContext();
   const [data, setData] = useState([]);
 
   const pageQuery = `
-*[slug == "om-bakebok" ]{
-  title, intro, body, image}
-`;
-
+  *[ _type == "page" ]{
+    title, intro, body, image,
+  }
+  `;
   useEffect(() => {
     if (client.fetch) {
       client
@@ -30,10 +32,10 @@ const About = () => {
   }
 
   return (
-    <Flex>
-      <h1>{data[0].title}</h1>
-      <Text> {data[0].intro}</Text>
-      <Text> {data[0].body}</Text>
+    <Flex direction="column" justifyContent="center" alignItems="center">
+      <PageH1>{data[0].title}</PageH1>
+      <PageText> {data[0].intro}</PageText>
+      <PageText> {data[0].body}</PageText>
     </Flex>
   );
 };
