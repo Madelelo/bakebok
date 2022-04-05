@@ -167,7 +167,23 @@ export default {
 
       description: "Pan measuements",
     },
+    {
+      name: "category",
+      title: "Category",
+      type: "string",
+      description: "Category",
+      options: {
+        list: [
+          { title: "Kjeks og cookies", value: "Cookies" },
+          { title: "Kaker og brownies", value: "Kaker" },
+          { title: "Brød og gjærbakst", value: "Brød" },
+          { title: "Desserter", value: "Desserter" },
+          { title: "Frosting og tilbehør", value: "Frosting" },
+        ],
+      },
+    },
   ],
+
   preview: {
     select: { title: "name" },
   },
