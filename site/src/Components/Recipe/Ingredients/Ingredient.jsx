@@ -2,13 +2,13 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import React from "react";
 
 const Ingredient = (props) => {
-  const { ingredientForRecipe } = props;
+  const { ingredientForRecipe, idiot } = props;
 
   if (!ingredientForRecipe.ingredient) {
     return null;
   }
 
-  const { unit, amount } = convertIfCup(ingredientForRecipe);
+  const { unit, amount } = convertIfCup(ingredientForRecipe, idiot);
 
   return (
     <Grid templateColumns="1fr 1fr 60%" gap={1} textStyle="body_list">
@@ -28,9 +28,13 @@ const convertToGrams = (amountInCups, cupInGrams) => {
   return amountInCups;
 };
 
-const convertIfCup = (ingredientForRecipe) => {
+const convertIfCup = (ingredientForRecipe, idiot) => {
   let unit = ingredientForRecipe.unit;
   let amount = ingredientForRecipe.amount;
+
+  if (idiot) {
+    return { unit, amount };
+  }
 
   if (
     ingredientForRecipe.unit === "cup" &&

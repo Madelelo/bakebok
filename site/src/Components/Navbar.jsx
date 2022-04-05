@@ -22,6 +22,7 @@ const Navbar = () => {
       <Divider
         orientation="horizontal"
         p={0.5}
+        borderColor="mpink"
         color="mpink"
         borderBottomWidth="2px"
       />
