@@ -6,25 +6,38 @@ import { useState } from "react";
 
 const Ingredients = (props) => {
   const { ingredients } = props;
-  const [idiot, setIdiot] = useState(false);
+  const [idiot, setIdiot] = useState(() => {
+    const saved = localStorage.getItem("idiot");
+    const initialValue = JSON.parse(saved);
+    return initialValue || false;
+  });
 
   if (!ingredients) {
     return null;
   }
-
+  const handleToggle = (checked) => {
+    setIdiot(checked);
+    localStorage.setItem("idiot", checked.toString());
+  };
   return (
     <Box>
-      <Text textStyle="h3">Ingredienser:</Text>
-      <FormLabel>
-        Idiot
-        <Switch
-          isChecked={idiot}
-          onChange={(event) => setIdiot(event.target.checked)}
-        />
-      </FormLabel>
+      <Box display="flex" justifyContent="space-between">
+        <Text textStyle="h3">Ingredienser:</Text>
+
+        <FormLabel display="flex" alignItems="center">
+          <Text fontSize="xs" paddingInline="2" textColor="dpink">
+            Idiot{" "}
+          </Text>
+          <Switch
+            isChecked={idiot}
+            onChange={(event) => handleToggle(event.target.checked)}
+            size="sm"
+          />
+        </FormLabel>
+      </Box>
+
       <Divider
         orientation="horizontal"
-        p={1}
         borderColor="yellow"
         color="yellow"
         borderBottomWidth="2px"
