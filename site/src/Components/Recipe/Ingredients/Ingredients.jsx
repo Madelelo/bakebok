@@ -1,9 +1,12 @@
 import React from "react";
 import Ingredient from "./Ingredient";
-import { Box, Divider, Text } from "@chakra-ui/react";
+import { Box, Divider, FormLabel, FormControl, Text } from "@chakra-ui/react";
+import { Switch } from "@chakra-ui/react";
+import { useState } from "react";
 
 const Ingredients = (props) => {
   const { ingredients } = props;
+  const [idiot, setIdiot] = useState(false);
 
   if (!ingredients) {
     return null;
