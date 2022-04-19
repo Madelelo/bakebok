@@ -36,7 +36,7 @@ export const theme = extendTheme({
     h3: {
       fontWeight: "semibold",
       lineHeight: "80%",
-      textColor: "mpink",
+      textColor: "mteal",
     },
     body_list: {
       fontSize: { base: "8px", sm: "8px", lg: "14px" },
@@ -63,6 +63,10 @@ export const theme = extendTheme({
       bg: "transparent",
       border: "2px solid #006D77",
       boxShadow: "teal",
+    },
+    linkShadow: {
+      fontWeight: "bold",
+      textColor: "teal",
     },
   },
   components: {},

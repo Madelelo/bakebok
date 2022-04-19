@@ -174,11 +174,11 @@ export default {
       description: "Category",
       options: {
         list: [
-          { title: "Kjeks og cookies", value: "Cookies" },
-          { title: "Kaker og brownies", value: "Kaker" },
-          { title: "Brød og gjærbakst", value: "Brød" },
+          { title: "Kjeks og cookies", value: "Kjeks og cookies" },
+          { title: "Kaker og brownies", value: "Kaker og brownies" },
+          { title: "Brød og gjærbakst", value: "Brød og gjærbakst" },
           { title: "Desserter", value: "Desserter" },
-          { title: "Frosting og tilbehør", value: "Frosting" },
+          { title: "Frosting og tilbehør", value: "Frosting og tilbehør" },
         ],
       },
     },
