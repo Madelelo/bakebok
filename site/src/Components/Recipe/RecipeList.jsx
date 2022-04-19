@@ -1,7 +1,14 @@
 import React from "react";
-import { VStack, Container } from "@chakra-ui/layout";
+import { VStack, Container, Box } from "@chakra-ui/layout";
 import { Link } from "react-router-dom";
 import ButtonBox from "../Styling/ButtonBox";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+} from "@chakra-ui/react";
 
 const RecipeList = (props) => {
   const { recipeList } = props;
@@ -9,22 +16,39 @@ const RecipeList = (props) => {
   if (!recipeList) {
     return null;
   }
+  const categories = [...new Set(recipeList.map((recipe) => recipe.category))];
+
+  const sortedCategories = categories.sort();
+
+  console.log(recipeList);
 
   return (
     <>
       <Container maxW="container.md" p={10}>
-        Velkommen til min bakebok! En samling med mine beste oppskirfter på en
-        fornuftig og reklamefri side.
-      </Container>
-
-      <Container maxW="container.md">
-        <VStack spacing={8} align="stretch">
-          {recipeList.map((recipe, index) => (
-            <Link key={`${recipe._id}-${index}`} to={`/recipe/${index}`}>
-              <ButtonBox>{recipe.name}</ButtonBox>
-            </Link>
+        <Accordion allowToggle>
+          {categories.map((category) => (
+            <AccordionItem key={category}>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  {category ? category : "Annet"}
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel pb={4}>
+                {recipeList
+                  .filter((recipe) => recipe.category === category && recipe)
+                  .map((recipe, index) => (
+                    <Link
+                      key={`${recipe._id}-${index}`}
+                      to={`/recipe/${index}`}
+                    >
+                      <Box>{recipe.name}</Box>
+                    </Link>
+                  ))}
+              </AccordionPanel>
+            </AccordionItem>
           ))}
-        </VStack>
+        </Accordion>
       </Container>
     </>
   );

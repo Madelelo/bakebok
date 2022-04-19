@@ -14,8 +14,8 @@ const Page = () => {
   const [data, setData] = useState([]);
 
   const recipeQuery = `
-  *[ _type == "recipe" ]{
-    name, description, cooktime, oven, temperature, pan,
+  *[ _type == "recipe"] | order(name){
+    name, description, cooktime, oven, temperature, pan, category,
     instructions[]-> {_id, name},
     ingredients[]{amount, unit, ingredient-> {name, cupconverter, _id}},
   }
