@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Container, Box } from "@chakra-ui/layout";
+import { Container } from "@chakra-ui/layout";
 import { Link } from "react-router-dom";
 import {
   Accordion,

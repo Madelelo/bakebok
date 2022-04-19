@@ -66,7 +66,7 @@ export const theme = extendTheme({
     },
     linkShadow: {
       fontWeight: "bold",
-      textColor: "teal",
+      textColor: "dteal",
     },
   },
   components: {},
