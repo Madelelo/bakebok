@@ -1,7 +1,6 @@
 import React from "react";
-import { VStack, Container, Box } from "@chakra-ui/layout";
+import { Text, Container, Box } from "@chakra-ui/layout";
 import { Link } from "react-router-dom";
-import ButtonBox from "../Styling/ButtonBox";
 import {
   Accordion,
   AccordionItem,
@@ -9,6 +8,7 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
+import AccordionBox, { AccorordianLink } from "../Styling/AccordianBox";
 
 const RecipeList = (props) => {
   const { recipeList } = props;
@@ -25,15 +25,25 @@ const RecipeList = (props) => {
   return (
     <>
       <Container maxW="container.md" p={10}>
+        <Container maxW="container.md" p={10}>
+          Velkommen til min bakebok! En samling med mine beste oppskirfter på en
+          fornuftig og reklamefri side.
+        </Container>
+
         <Accordion allowToggle>
           {categories.map((category) => (
-            <AccordionItem key={category}>
+            <AccordionItem
+              key={category}
+              borderColor="white"
+              isFocusable="false"
+            >
               <AccordionButton>
-                <Box flex="1" textAlign="left">
+                <AccordionBox>
                   {category ? category : "Annet"}
-                </Box>
-                <AccordionIcon />
+                  <AccordionIcon />
+                </AccordionBox>
               </AccordionButton>
+
               <AccordionPanel pb={4}>
                 {recipeList
                   .filter((recipe) => recipe.category === category && recipe)
@@ -42,7 +52,7 @@ const RecipeList = (props) => {
                       key={`${recipe._id}-${index}`}
                       to={`/recipe/${index}`}
                     >
-                      <Box>{recipe.name}</Box>
+                      <AccorordianLink> {recipe.name}</AccorordianLink>
                     </Link>
                   ))}
               </AccordionPanel>
