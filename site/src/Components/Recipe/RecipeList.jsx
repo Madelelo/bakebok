@@ -1,6 +1,5 @@
 import React from "react";
-import { Text, Container, Box } from "@chakra-ui/layout";
-import { Link } from "react-router-dom";
+import { Container } from "@chakra-ui/layout";
 import {
   Accordion,
   AccordionItem,
@@ -8,7 +7,8 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-import AccordionBox, { AccorordianLink } from "../Styling/AccordianBox";
+import AccordionBox from "../Styling/AccordianBox";
+import RecipeListItems from "./RecipeListItems";
 
 const RecipeList = (props) => {
   const { recipeList } = props;
@@ -19,8 +19,6 @@ const RecipeList = (props) => {
   const categories = [...new Set(recipeList.map((recipe) => recipe.category))];
 
   const sortedCategories = categories.sort();
-
-  console.log(recipeList);
 
   return (
     <>
@@ -45,16 +43,7 @@ const RecipeList = (props) => {
               </AccordionButton>
 
               <AccordionPanel pb={4}>
-                {recipeList
-                  .filter((recipe) => recipe.category === category && recipe)
-                  .map((recipe, index) => (
-                    <Link
-                      key={`${recipe._id}-${index}`}
-                      to={`/recipe/${index}`}
-                    >
-                      <AccorordianLink> {recipe.name}</AccorordianLink>
-                    </Link>
-                  ))}
+                <RecipeListItems recipeList={recipeList} category={category} />
               </AccordionPanel>
             </AccordionItem>
           ))}

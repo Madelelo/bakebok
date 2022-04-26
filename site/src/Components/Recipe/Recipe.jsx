@@ -7,17 +7,20 @@ import { Container, Box, Grid, Flex } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import Specifications from "./Specs/Specifications";
 import InfoBox, { InfoBoxFull, InfoBoxHead } from "../Styling/InfoBox";
+import RecipeListItems from "./RecipeListItems";
 
 const Recipe = (props) => {
   const { recipes } = props;
-  const { recipeId } = useParams();
+  const { recipeSlug } = useParams();
+
+  const recipe = recipes.find(
+    (recipeItem) => recipeItem.slug && recipeItem.slug.current === recipeSlug
+  );
 
   if (!recipes) {
     return null;
   }
 
-  const recipe = recipes[recipeId];
-  console.log();
   return (
     <Flex direction="column" align="center">
       <Container maxW="3xl">

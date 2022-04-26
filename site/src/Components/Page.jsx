@@ -15,7 +15,7 @@ const Page = () => {
 
   const recipeQuery = `
   *[ _type == "recipe"] | order(name){
-    name, description, cooktime, oven, temperature, pan, category,
+    name, description, cooktime, oven, temperature, pan, category, slug, 
     instructions[]-> {_id, name},
     ingredients[]{amount, unit, ingredient-> {name, cupconverter, _id}},
   }
@@ -37,6 +37,7 @@ const Page = () => {
   if (!data.length) {
     return <Spinner m="10" p="4" color="teal" />;
   }
+  console.log(data);
 
   return (
     <Box>
@@ -44,7 +45,7 @@ const Page = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<RecipeList recipeList={data} />} />
-          <Route path="recipe/:recipeId" element={<Recipe recipes={data} />} />
+          <Route path="/:recipeSlug" element={<Recipe recipes={data} />} />
           <Route path="/about" element={<About />} />
 
           <Route
