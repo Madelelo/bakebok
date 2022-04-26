@@ -18,8 +18,6 @@ const RecipeList = (props) => {
   }
   const categories = [...new Set(recipeList.map((recipe) => recipe.category))];
 
-  const sortedCategories = categories.sort();
-
   return (
     <>
       <Container maxW="container.md" p={10}>

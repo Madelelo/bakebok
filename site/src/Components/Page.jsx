@@ -37,7 +37,6 @@ const Page = () => {
   if (!data.length) {
     return <Spinner m="10" p="4" color="teal" />;
   }
-  console.log(data);
 
   return (
     <Box>

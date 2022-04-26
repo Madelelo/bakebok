@@ -7,7 +7,6 @@ import { Container, Box, Grid, Flex } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import Specifications from "./Specs/Specifications";
 import InfoBox, { InfoBoxFull, InfoBoxHead } from "../Styling/InfoBox";
-import RecipeListItems from "./RecipeListItems";
 
 const Recipe = (props) => {
   const { recipes } = props;
