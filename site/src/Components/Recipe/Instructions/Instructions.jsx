@@ -16,8 +16,9 @@ const Instructions = (props) => {
         <Divider
           orientation="horizontal"
           p={1}
-          color="yellow"
+          borderColor="yellow"
           borderBottomWidth="2px"
+          paddingBottom="2"
         />
 
         {instructions.map((instruction) => (

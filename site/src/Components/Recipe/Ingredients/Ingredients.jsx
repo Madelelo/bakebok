@@ -26,13 +26,16 @@ const Ingredients = (props) => {
 
         <FormLabel display="flex" alignItems="center">
           <Text fontSize="xs" paddingInline="2" textColor="dpink">
-            Idiot{" "}
+            Vanlig
           </Text>
           <Switch
             isChecked={idiot}
             onChange={(event) => handleToggle(event.target.checked)}
             size="sm"
           />
+          <Text fontSize="xs" paddingInline="2" textColor="dpink">
+            Idiot
+          </Text>
         </FormLabel>
       </Box>
 

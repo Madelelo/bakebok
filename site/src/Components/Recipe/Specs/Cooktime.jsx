@@ -14,7 +14,8 @@ const Cooktime = (props) => {
   return (
     <InfoBoxSpecs>
       <StyledIcon icon={GiSandsOfTime} />
-      <Text> Tid i ovn: {cooktime} minutter</Text>
+      <Text> Tid i ovn: </Text>
+      <Text> {cooktime} minutter</Text>
     </InfoBoxSpecs>
   );
 };

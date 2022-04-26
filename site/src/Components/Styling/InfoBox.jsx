@@ -37,7 +37,7 @@ export const InfoBoxSpecs = (props) => {
   const { children } = props;
 
   return (
-    <Flex px="8" align="center" textStyle="body">
+    <Flex alignItems="center" justifyContent="center" textStyle="body" p={2}>
       {children}
     </Flex>
   );

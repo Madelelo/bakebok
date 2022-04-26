@@ -31,7 +31,6 @@ const About = () => {
     return <Spinner m="10" p="4" color="teal" />;
   }
 
-  console.log(data[0].intro);
   return (
     <Container width="3xl">
       <Flex direction="column" justifyContent="center" alignItems="center">
