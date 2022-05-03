@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One");
+
+:root {
+  --brand-darkest: #006d77;
+  --brand-darkest--inverted: color(var(--brand-darkest) contrast(80%));
+  --brand-lightest: #edf6f9;
+  --brand-primary: #83c5be;
+  --brand-primary--inverted: color(var(--brand-primary) contrast(80%));
+  --brand-secondary: #006d77;
+  --brand-secondary--inverted: var(--brand-lightest);
+
+  --font-family-base: "Arial";
+}
