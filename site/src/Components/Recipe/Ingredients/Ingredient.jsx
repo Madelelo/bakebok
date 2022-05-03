@@ -8,7 +8,7 @@ const Ingredient = (props) => {
     return null;
   }
 
-  const { unit, amount } = convertIfCup(ingredientForRecipe, idiot);
+  const { unit, amount } = convert(ingredientForRecipe, idiot);
 
   return (
     <Grid templateColumns="1fr 1fr 60%" gap={1} textStyle="body_list">
@@ -28,23 +28,49 @@ const convertToGrams = (amountInCups, cupInGrams) => {
   return amountInCups;
 };
 
-const convertIfCup = (ingredientForRecipe, idiot) => {
+const convertToCups = (amountInGrams, cupInGrams) => {
+  if (amountInGrams != null) {
+    let calcAmount = amountInGrams / cupInGrams;
+    calcAmount = calcAmount.toFixed(1);
+    return calcAmount;
+  }
+  return amountInGrams;
+};
+
+const convert = (ingredientForRecipe, idiot) => {
   let unit = ingredientForRecipe.unit;
   let amount = ingredientForRecipe.amount;
+  let cupconverter = ingredientForRecipe.ingredient.cupconverter;
 
-  if (idiot) {
-    return { unit, amount };
+  if (unit === "gram" && idiot && cupconverter != null) {
+    unit = "cup";
+    amount = convertToCups(amount, cupconverter);
   }
 
-  if (
-    ingredientForRecipe.unit === "cup" &&
-    ingredientForRecipe.ingredient.cupconverter != null
-  ) {
+  if (unit === "cup" && !idiot && cupconverter != null) {
     unit = "gram";
-    amount = convertToGrams(
-      amount,
-      ingredientForRecipe.ingredient.cupconverter
-    );
+    amount = convertToGrams(amount, cupconverter);
   }
   return { unit, amount };
 };
+
+// const convertIfCup = (ingredientForRecipe, idiot) => {
+//   let unit = ingredientForRecipe.unit;
+//   let amount = ingredientForRecipe.amount;
+
+//   if (idiot) {
+//     //konfertil til cups
+//   }
+
+//   if (
+//     ingredientForRecipe.unit === "cup" &&
+//     ingredientForRecipe.ingredient.cupconverter != null
+//   ) {
+//     unit = "gram";
+//     amount = convertToGrams(
+//       amount,
+//       ingredientForRecipe.ingredient.cupconverter
+//     );
+//   }
+//   return { unit, amount };
+// };

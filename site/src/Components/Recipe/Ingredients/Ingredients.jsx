@@ -19,6 +19,7 @@ const Ingredients = (props) => {
     setIdiot(checked);
     localStorage.setItem("idiot", checked.toString());
   };
+
   return (
     <Box>
       <Box display="flex" justifyContent="space-between">
