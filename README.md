@@ -13,6 +13,7 @@ En samling av mine oppskrifter på den måten jeg vil lese de. Sjekk de ut på h
 ### Kjør prosjektet lokalt
 
 Klon prosjektet
+
 `git clone https://github.com/Madelelo/bakebok.git`
 
 Gå inn i prosjektmappen
@@ -33,5 +34,6 @@ Terminal 2 (React):
 
 `npm run start`
 
-###Tilbakemeldinger
+### Tilbakemeldinger
+
 Har du innspill og/eller tilbakemeldinger? Send meg en epost: madeleine.loras@gmail.com
