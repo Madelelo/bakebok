@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Recipe from "./Recipe/Recipe";
 import RecipeList from "./Recipe/RecipeList";
 import Navbar from "./Navbar";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box, Spinner } from "@chakra-ui/react";
 import Footer from "./Footer";
 import About from "./About";
@@ -15,7 +15,7 @@ const Page = () => {
 
   const recipeQuery = `
   *[ _type == "recipe"] | order(name){
-    name, description, cooktime, oven, temperature, pan, category, slug, 
+    name, description, cooktime, oven, temperature, pan, category, slug, difficulty,
     instructions[]-> {_id, name},
     ingredients[]{amount, unit, ingredient-> {name, cupconverter, _id}},
   }
