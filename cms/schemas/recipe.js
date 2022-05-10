@@ -200,8 +200,20 @@ export default {
         ],
       },
     },
+    {
+      name: "difficulty",
+      title: "Difficulty",
+      type: "number",
+      description: "Difficulty",
+      options: {
+        list: [
+          { title: "Easy peasy", value: 1 },
+          { title: "Medium", value: 2 },
+          { title: "Expert", value: 3 },
+        ],
+      },
+    },
   ],
-
   preview: {
     select: { title: "name" },
   },
