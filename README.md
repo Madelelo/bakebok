@@ -27,11 +27,11 @@ For å kjøre alt lokalt må åpne terminal for båded Sanity og React slik:
 
 Terminal 1 (Sanity):
 
-`sanity start``
+`sanity start`
 
 Terminal 2 (React):
 
-`npm run start``
+`npm run start`
 
 ###Tilbakemeldinger
 Har du innspill og/eller tilbakemeldinger? Send meg en epost: madeleine.loras@gmail.com
