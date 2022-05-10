@@ -12,24 +12,24 @@ En samling av mine oppskrifter på den måten jeg vil lese de. Sjekk de ut på h
 
 ### Kjør prosjektet lokalt
 
-#Klon prosjektet
+Klon prosjektet
 `git clone https://github.com/Madelelo/bakebok.git`
 
-#Gå inn i prosjektmappen
+Gå inn i prosjektmappen
 
 `cd bakebok`
 
-#Innstaller avhengigheter
+Innstaller avhengigheter
 
 `npm install cd Sanity sanity init`
 
 For å kjøre alt lokalt må åpne terminal for båded Sanity og React slik:
 
-#Terminal 1 (Sanity):
+Terminal 1 (Sanity):
 
 `sanity start``
 
-#Terminal 2 (React):
+Terminal 2 (React):
 
 `npm run start``
 
