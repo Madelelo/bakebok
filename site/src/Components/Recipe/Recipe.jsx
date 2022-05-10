@@ -7,9 +7,10 @@ import { Container, Box, Grid, Flex } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import Specifications from "./Specs/Specifications";
 import InfoBox, { InfoBoxFull, InfoBoxHead } from "../Styling/InfoBox";
+import Difficulty from "./Difficulty";
 
 const Recipe = (props) => {
-  const { recipes } = props;
+  const { recipes, difficulty } = props;
   const { recipeSlug } = useParams();
 
   const recipe = recipes.find(
@@ -30,8 +31,11 @@ const Recipe = (props) => {
           gap={4}
         >
           <InfoBoxHead>
-            <Box>
+            <Flex justify="space-around" align="center">
               <Title title={recipe.name} />
+              <Difficulty difficulty={recipe.difficulty} />
+            </Flex>
+            <Box>
               <Description description={recipe.description} />
             </Box>
           </InfoBoxHead>
@@ -46,6 +50,7 @@ const Recipe = (props) => {
               pan={recipe.pan}
               temperature={recipe.temperature}
               oven={recipe.oven}
+              difficulty={recipe.difficulty}
             />
           </InfoBox>
 

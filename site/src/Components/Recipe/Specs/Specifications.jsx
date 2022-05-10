@@ -6,7 +6,7 @@ import Oven from "./Oven";
 import Pan from "./Pan";
 
 const Specifications = (props) => {
-  const { cooktime, temperature, pan, oven } = props;
+  const { cooktime, temperature, pan, oven, difficulty } = props;
 
   return (
     <Flex justifyContent="center" flexFlow="column wrap">
