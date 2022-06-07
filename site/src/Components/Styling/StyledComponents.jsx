@@ -16,10 +16,9 @@ export const DifficultyIcon = (props) => {
   return (
     <Icon
       as={GiCupcake}
-      mr="10"
       justify="space-around"
       color={color}
-      w="8"
+      w={[6, 8, 20]}
       h="8"
     />
   );

@@ -15,7 +15,7 @@ const Navbar = () => {
         borderBottom="2px solid #006D77"
       >
         <Icon as={GiCupcake} w={8} h={8} m={4} color="mteal" />
-        <Text textStyle="h1" color="dteal">
+        <Text textStyle="h1_nav" color="dteal">
           Bakeboka
         </Text>
       </Flex>

@@ -31,7 +31,7 @@ const Recipe = (props) => {
           gap={4}
         >
           <InfoBoxHead>
-            <Flex justify="space-around" align="center">
+            <Flex justify="space-between" align="center">
               <Title title={recipe.name} />
               <Difficulty difficulty={recipe.difficulty} />
             </Flex>
