@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "@chakra-ui/layout";
+import { Text, Box } from "@chakra-ui/react";
 
 const Description = (props) => {
   const { description } = props;
@@ -9,10 +10,9 @@ const Description = (props) => {
   }
 
   return (
-    <Container maxw="container.lg" p={0} marginLeft="0">
-      {" "}
-      {description}
-    </Container>
+    <Box>
+      <Text textStyle="byline">{description}</Text>
+    </Box>
   );
 };
 

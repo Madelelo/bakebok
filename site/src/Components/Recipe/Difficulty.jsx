@@ -12,7 +12,7 @@ const Difficulty = (props) => {
 
   return (
     <InfoBoxSpecs>
-      <Flex justifyContent="center" flexFlow="column wrap">
+      <Flex justifyContent="center" flexFlow="column wrap" flexShrink="0">
         <Box>
           <DifficultyIcon color={difficulty > 0 ? "dpink" : "lpink"} />
           <DifficultyIcon color={difficulty > 1 ? "dpink" : "lpink"} />

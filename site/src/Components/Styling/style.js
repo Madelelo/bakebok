@@ -15,19 +15,25 @@ export const theme = extendTheme({
   },
   textStyles: {
     h1_icon: {
-      fontSize: { base: "0px", md: "30px", lg: "40px" },
+      fontSize: { base: "20px", md: "30px", lg: "40px" },
+      fontWeight: "bold",
+      lineHeight: "110%",
+      letterSpacing: "-2%",
+    },
+    h1_nav: {
+      fontSize: { base: "30px", md: "30px", lg: "40px" },
       fontWeight: "bold",
       lineHeight: "110%",
       letterSpacing: "-2%",
     },
     h1: {
-      fontSize: { base: "14px", md: "30px", lg: "40px" },
+      fontSize: { base: "15px", md: "30px", lg: "40px" },
       fontWeight: "bold",
       lineHeight: "110%",
       letterSpacing: "-2%",
     },
     h2: {
-      fontSize: { base: "10px", md: "20px", lg: "30px" },
+      fontSize: { base: "15px", md: "20px", lg: "30px" },
       fontWeight: "semibold",
       lineHeight: "100%",
       letterSpacing: "-1%",
@@ -39,12 +45,16 @@ export const theme = extendTheme({
       textColor: "mteal",
     },
     body_list: {
-      fontSize: { base: "8px", sm: "8px", lg: "14px" },
+      fontSize: { base: "10px", sm: "10px", lg: "14px" },
       lineHeight: "150%",
       textColor: "black",
     },
     body: {
-      fontSize: { base: "8px", sm: "8px", lg: "14px" },
+      fontSize: { base: "10px", sm: "10px", lg: "14px" },
+      textColor: "black",
+    },
+    byline: {
+      fontSize: { base: "14px", sm: "14px", lg: "16px" },
       textColor: "black",
     },
   },
