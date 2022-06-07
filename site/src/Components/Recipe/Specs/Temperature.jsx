@@ -15,9 +15,8 @@ const Temperature = (props) => {
     <InfoBoxSpecs>
       <StyledIcon icon={GiHeatHaze} />
       <Flex justify="row">
-        <Text>Tempratur: </Text>
         <Text>
-          {temperature?.value} {temperature?.unit}
+          Tempratur: {temperature?.value} {temperature?.unit}
         </Text>
       </Flex>
     </InfoBoxSpecs>

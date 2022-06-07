@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "@chakra-ui/react";
+import { Text, Box } from "@chakra-ui/react";
 import { GiSandsOfTime } from "react-icons/gi";
 import { InfoBoxSpecs } from "../../Styling/InfoBox";
 import StyledIcon from "../../Styling/StyledComponents";
@@ -14,8 +14,9 @@ const Cooktime = (props) => {
   return (
     <InfoBoxSpecs>
       <StyledIcon icon={GiSandsOfTime} />
-      <Text> Tid i ovn: </Text>
-      <Text> {cooktime} minutter</Text>
+      <Box>
+        <Text> Tid i ovn: {cooktime} minutter</Text>
+      </Box>
     </InfoBoxSpecs>
   );
 };

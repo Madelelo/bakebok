@@ -45,7 +45,7 @@ export const theme = extendTheme({
       textColor: "mteal",
     },
     body_list: {
-      fontSize: { base: "10px", sm: "10px", lg: "14px" },
+      fontSize: { base: "8px", sm: "10px", lg: "14px" },
       lineHeight: "150%",
       textColor: "black",
     },
