@@ -90,6 +90,10 @@ const Chat = () => {
           </form>
         </Flex>
       </Box>
+      <Text fontSize="xs" color="mteal" mt={10}>
+        Powered by text-davinci-003 by OpenAI. Thank to @Markus-bit for
+        inspiration and code.
+      </Text>
     </Flex>
   );
 };
