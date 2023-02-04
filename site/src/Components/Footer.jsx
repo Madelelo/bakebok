@@ -39,6 +39,17 @@ const Footer = () => {
             Mer om bakeboka her
           </Text>
         </Link>
+        <Link to="/chat">
+          <Text
+            textAlign="center"
+            textStyle="body_list"
+            fontWeight="bold"
+            color="mteal"
+            p={5}
+          >
+            Chat
+          </Text>
+        </Link>
         <a href="https://bakebok.sanity.studio/desk">
           <Text
             textAlign="center"

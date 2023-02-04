@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "@chakra-ui/react";
-import { GiCupcake } from "react-icons/gi";
+import { GiCupcake, GiChefToque, GiTalk } from "react-icons/gi";
 
 const StyledIcon = (props) => {
   const { icon } = props;
@@ -20,6 +20,34 @@ export const DifficultyIcon = (props) => {
       color={color}
       w={[6, 8, 20]}
       h="8"
+    />
+  );
+};
+
+export const ChatIcon = (props) => {
+  const { color } = props;
+
+  return (
+    <Icon
+      as={GiChefToque}
+      justify="space-around"
+      color={color}
+      w={[6, 8, 20]}
+      h="6"
+    />
+  );
+};
+
+export const AskerIcon = (props) => {
+  const { color } = props;
+
+  return (
+    <Icon
+      as={GiTalk}
+      justify="space-around"
+      color={color}
+      w={[6, 8, 20]}
+      h="6"
     />
   );
 };
