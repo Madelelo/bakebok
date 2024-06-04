@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
-import sanityClient from "@sanity/client";
+import  from "@sanity/client";
 
 const initialState = { client: {} };
 

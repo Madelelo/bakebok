@@ -12,7 +12,7 @@ En samling av mine oppskrifter på den måten jeg vil lese de. Sjekk de ut på h
 
 ### Kjør prosjektet lokalt
 
-Klon prosjektet
+Klon prosjektet:
 
 `git clone https://github.com/Madelelo/bakebok.git`
 
