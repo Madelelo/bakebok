@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
-import  from "@sanity/client";
+import { createClient } from "@sanity/client";
 
 const initialState = { client: {} };
 
@@ -10,13 +10,11 @@ export const SanityProvider = (props) => {
   const [state, setState] = useState(initialState);
 
   useEffect(() => {
-    const client = sanityClient({
-      projectId: "33hgh7pg",
-      dataset: "production",
-      apiVersion: "2021-09-22", // uses current UTC date - see "specifying API version"!
-      token:
-        "skzxVNKl3yIsLZ83VFe4KgxoAkxpVOlOJSaDLhzcKKLhXYNHTdFF7oYcOfoqZ3vlX9fjSxy6dhj0e3wpvXSrfBnFcODSbVxCz5pU1VNXgFA13Zozq2VA3hj9dQfwWJgVKaCkdHM1CojuUIMXLWkDmkmA0iRMxQtyRxFOObFX3ZltPlN3PoMh",
-      useCdn: true, // `false` if you want to ensure fresh data
+    const client = createClient({
+      projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+      dataset: import.meta.env.VITE_SANITY_DATASET,
+      apiVersion: import.meta.env.VITE_SANITY_API_VERSION || "2026-04-29",
+      useCdn: true,
     });
 
     setState((prevState) => ({ ...prevState, client }));

@@ -1,6 +1,3 @@
-import ingredient from "./ingredient";
-import SlugInput from "sanity-plugin-better-slug";
-
 export default {
   name: "recipe",
   title: "Recipe",
@@ -16,17 +13,14 @@ export default {
       name: "slug",
       title: "Slug",
       type: "slug",
+      validation: (Rule) => Rule.required(),
       options: {
-        //Change to schema title to automatically populate
         source: "name",
         slugify: (input) =>
           input
             .toLowerCase()
-            //Remove spaces
             .replace(/\s+/g, "-")
-            //Remove special characters
             .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ""),
-        validation: (Rule) => Rule.required(),
       },
     },
     {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Box } from "@chakra-ui/layout";
+import { Flex, Box } from "@chakra-ui/react";
 
 const Instruction = (props) => {
   const { instruction } = props;
