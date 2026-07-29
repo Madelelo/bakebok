@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "@chakra-ui/layout";
+import { Container } from "@chakra-ui/react";
 import { Text, Box } from "@chakra-ui/react";
 
 const Description = (props) => {

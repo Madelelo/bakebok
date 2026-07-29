@@ -4,7 +4,7 @@ En samling av mine oppskrifter på den måten jeg vil lese de. Sjekk de ut på h
 
 ### Utviklet med
 
-- [React.js](https://reactjs.org/)
+- [React](https://react.dev/)
 - [Sanity](https://www.sanity.io/)
 - [Node](https://nodejs.org/en/)
 - [Chakra UI](https://chakra-ui.com/)
@@ -12,27 +12,12 @@ En samling av mine oppskrifter på den måten jeg vil lese de. Sjekk de ut på h
 
 ### Kjør prosjektet lokalt
 
-Klon prosjektet:
+Frontend og Sanity Studio er to separate npm-prosjekter.
 
-`git clone https://github.com/Madelelo/bakebok.git`
+1. I `site/`: kopier `.env.example` til `.env`, installer avhengigheter med `npm install`, og start med `npm run dev`.
+2. I `cms/`: installer avhengigheter med `npm install`, og start Studio med `npm run dev`.
 
-Gå inn i prosjektmappen
-
-`cd bakebok`
-
-Innstaller avhengigheter
-
-`npm install cd Sanity sanity init`
-
-For å kjøre alt lokalt må åpne terminal for båded Sanity og React slik:
-
-Terminal 1 (Sanity):
-
-`sanity start`
-
-Terminal 2 (React):
-
-`npm run start`
+For produksjonsbygg bruker begge prosjekter `npm run build`. Frontenden bygges til `site/dist/`; Studio deployes med `npm run deploy` fra `cms/`.
 
 ### Tilbakemeldinger
 
