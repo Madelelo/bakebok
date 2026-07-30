@@ -10,22 +10,25 @@ const Instructions = (props) => {
   }
 
   return (
-    <>
-      <Box>
-        <Text textStyle="h3"> Instruksjoner:</Text>
-        <Divider
-          orientation="horizontal"
-          p={1}
-          borderColor="yellow"
-          borderBottomWidth="2px"
-          paddingBottom="2"
-        />
+    <Box>
+      <Text textStyle="h3">Instruksjoner:</Text>
+      <Divider
+        orientation="horizontal"
+        borderColor="yellow"
+        color="yellow"
+        borderBottomWidth="2px"
+        paddingBottom="2"
+      />
 
-        {instructions.map((instruction) => (
-          <Instruction key={instruction._id} instruction={instruction} />
-        ))}
-      </Box>
-    </>
+      {instructions.map((instruction, index) => (
+        <Instruction
+          key={instruction._key || instruction._id || index}
+          instruction={instruction}
+          number={index + 1}
+          isLast={index === instructions.length - 1}
+        />
+      ))}
+    </Box>
   );
 };
 
