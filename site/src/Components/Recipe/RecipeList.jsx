@@ -1,13 +1,5 @@
-import React, { useMemo, useState } from "react";
-import {
-  Box,
-  Container,
-  FormControl,
-  FormLabel,
-  Select,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
+import React from "react";
+import { Container, Text } from "@chakra-ui/react";
 import {
   Accordion,
   AccordionItem,
@@ -29,9 +21,6 @@ const preferredCategoryOrder = [
 
 const RecipeList = (props) => {
   const { recipeList = [] } = props;
-  const [categoryFilter, setCategoryFilter] = useState("all");
-  const [difficultyFilter, setDifficultyFilter] = useState("all");
-  const [timeFilter, setTimeFilter] = useState("all");
 
   const categories = [
     ...new Set(recipeList.map((recipe) => recipe.category || "Annet")),
@@ -43,26 +32,6 @@ const RecipeList = (props) => {
     if (bIndex === -1) return -1;
     return aIndex - bIndex;
   });
-
-  const filteredRecipes = useMemo(() => {
-    return recipeList.filter((recipe) => {
-      const category = recipe.category || "Annet";
-      const minutes = Number.parseInt(recipe.cooktime, 10);
-      const matchesCategory = categoryFilter === "all" || category === categoryFilter;
-      const matchesDifficulty =
-        difficultyFilter === "all" || recipe.difficulty === Number(difficultyFilter);
-      const matchesTime =
-        timeFilter === "all" ||
-        (timeFilter === "short" && Number.isFinite(minutes) && minutes <= 30) ||
-        (timeFilter === "medium" && Number.isFinite(minutes) && minutes > 30 && minutes <= 60) ||
-        (timeFilter === "long" && Number.isFinite(minutes) && minutes > 60);
-      return matchesCategory && matchesDifficulty && matchesTime;
-    });
-  }, [recipeList, categoryFilter, difficultyFilter, timeFilter]);
-
-  const visibleCategories = categories.filter((category) =>
-    filteredRecipes.some((recipe) => (recipe.category || "Annet") === category)
-  );
 
   return (
     <>
@@ -78,55 +47,8 @@ const RecipeList = (props) => {
           </Text>
         </Container>
 
-        <Box mb={8}>
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4}>
-            <FormControl>
-              <FormLabel fontWeight="semibold">Kategori</FormLabel>
-              <Select
-                value={categoryFilter}
-                onChange={(event) => setCategoryFilter(event.target.value)}
-              >
-                <option value="all">Alle kategorier</option>
-                {categories.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
-            <FormControl>
-              <FormLabel fontWeight="semibold">Vanskelighetsgrad</FormLabel>
-              <Select
-                value={difficultyFilter}
-                onChange={(event) => setDifficultyFilter(event.target.value)}
-              >
-                <option value="all">Alle nivåer</option>
-                <option value="1">Lav</option>
-                <option value="2">Middels</option>
-                <option value="3">Høy</option>
-              </Select>
-            </FormControl>
-            <FormControl>
-              <FormLabel fontWeight="semibold">Tid i ovnen</FormLabel>
-              <Select
-                value={timeFilter}
-                onChange={(event) => setTimeFilter(event.target.value)}
-              >
-                <option value="all">Alle tider</option>
-                <option value="short">Inntil 30 min</option>
-                <option value="medium">31–60 min</option>
-                <option value="long">Over 60 min</option>
-              </Select>
-            </FormControl>
-          </SimpleGrid>
-          <Text mt={4} color="dgray" aria-live="polite">
-            {filteredRecipes.length} {filteredRecipes.length === 1 ? "oppskrift" : "oppskrifter"}
-          </Text>
-        </Box>
-
-        {visibleCategories.length ? (
-          <Accordion allowMultiple>
-            {visibleCategories.map((category) => (
+        <Accordion allowMultiple>
+            {categories.map((category) => (
             <AccordionItem
               key={category}
               borderColor="white"
@@ -140,19 +62,11 @@ const RecipeList = (props) => {
               </AccordionButton>
 
               <AccordionPanel pb={4}>
-                <RecipeListItems recipeList={filteredRecipes} category={category} />
+                <RecipeListItems recipeList={recipeList} category={category} />
               </AccordionPanel>
             </AccordionItem>
             ))}
-          </Accordion>
-        ) : (
-          <Box layerStyle="pinkShadow" p={6} textAlign="center">
-            <Text fontSize="18px" fontWeight="semibold">
-              Ingen oppskrifter passer filtrene.
-            </Text>
-            <Text mt={2}>Prøv en annen kombinasjon.</Text>
-          </Box>
-        )}
+        </Accordion>
       </Container>
     </>
   );
