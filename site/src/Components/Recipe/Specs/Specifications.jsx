@@ -5,7 +5,7 @@ import Temperature from "./Temperature";
 import Pan from "./Pan";
 
 const Specifications = (props) => {
-  const { cooktime, temperature, pan } = props;
+  const { cooktime, temperature, pan, idiot } = props;
 
   return (
     <SimpleGrid
@@ -17,7 +17,7 @@ const Specifications = (props) => {
       borderColor="yellow"
     >
       <Cooktime cooktime={cooktime} />
-      <Temperature temperature={temperature} />
+      <Temperature temperature={temperature} idiot={idiot} />
       <Pan pan={pan} />
     </SimpleGrid>
   );

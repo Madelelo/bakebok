@@ -25,6 +25,7 @@
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
+    "test": "node --test",
     "preview": "vite preview"
   },
   "browserslist": {

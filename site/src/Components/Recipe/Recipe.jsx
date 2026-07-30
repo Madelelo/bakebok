@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Ingredients from "./Ingredients/Ingredients";
 import Instructions from "./Instructions/Instructions";
 import Description from "./Description";
@@ -14,6 +14,14 @@ import Difficulty from "./Difficulty";
 const Recipe = (props) => {
   const { recipes } = props;
   const { recipeSlug } = useParams();
+  const [idiot, setIdiot] = useState(
+    () => localStorage.getItem("idiot") === "true"
+  );
+
+  const handleIdiotToggle = (checked) => {
+    setIdiot(checked);
+    localStorage.setItem("idiot", checked.toString());
+  };
 
   if (!recipes) {
     return null;
@@ -70,11 +78,16 @@ const Recipe = (props) => {
               cooktime={recipe.cooktime}
               pan={recipe.pan}
               temperature={recipe.temperature}
+              idiot={idiot}
             />
           </InfoBoxHead>
 
           <InfoBox>
-            <Ingredients ingredients={recipe.ingredients} />
+            <Ingredients
+              ingredients={recipe.ingredients}
+              idiot={idiot}
+              onIdiotChange={handleIdiotToggle}
+            />
           </InfoBox>
 
           <InfoBoxFull>
