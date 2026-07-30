@@ -78,10 +78,7 @@ const RecipeList = (props) => {
           </Text>
         </Container>
 
-        <Box layerStyle="blueShadow" p={{ base: 4, md: 5 }} mb={8}>
-          <Text as="h1" textStyle="h2" mb={5}>
-            Finn en oppskrift
-          </Text>
+        <Box mb={8}>
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4}>
             <FormControl>
               <FormLabel fontWeight="semibold">Kategori</FormLabel>
@@ -104,9 +101,9 @@ const RecipeList = (props) => {
                 onChange={(event) => setDifficultyFilter(event.target.value)}
               >
                 <option value="all">Alle nivåer</option>
-                <option value="1">Enkel</option>
+                <option value="1">Lav</option>
                 <option value="2">Middels</option>
-                <option value="3">Krevende</option>
+                <option value="3">Høy</option>
               </Select>
             </FormControl>
             <FormControl>

@@ -1,8 +1,7 @@
 import React from "react";
-import { Text } from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import { InfoBoxSpecs } from "../Styling/InfoBox";
-import { GiCupcake } from "react-icons/gi";
-import StyledIcon from "../Styling/StyledComponents";
+import { DifficultyIcon } from "../Styling/StyledComponents";
 
 const Difficulty = (props) => {
   const { difficulty } = props;
@@ -11,12 +10,23 @@ const Difficulty = (props) => {
     return null;
   }
 
-  const labels = { 1: "Enkel", 2: "Middels", 3: "Krevende" };
+  const labels = { 1: "Lav", 2: "Middels", 3: "Høy" };
+  const label = labels[difficulty] || difficulty;
 
   return (
     <InfoBoxSpecs>
-      <StyledIcon icon={GiCupcake} />
-      <Text><Text as="span" fontWeight="semibold">Nivå</Text><br />{labels[difficulty] || difficulty}</Text>
+      <Box>
+        <Text fontWeight="semibold">Nivå</Text>
+        <HStack spacing={1} mt={1} role="img" aria-label={`${label}: ${difficulty} av 3 cupcakes`}>
+          {[1, 2, 3].map((level) => (
+            <DifficultyIcon
+              key={level}
+              color={difficulty >= level ? "dpink" : "lpink"}
+            />
+          ))}
+        </HStack>
+        <Text mt={1}>{label}</Text>
+      </Box>
     </InfoBoxSpecs>
   );
 };

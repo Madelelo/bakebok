@@ -16,10 +16,10 @@ export const DifficultyIcon = (props) => {
   return (
     <Icon
       as={GiCupcake}
-      justify="space-around"
+      aria-hidden="true"
       color={color}
-      w={[6, 8, 20]}
-      h="8"
+      w={{ base: 5, md: 6 }}
+      h={{ base: 5, md: 6 }}
     />
   );
 };
