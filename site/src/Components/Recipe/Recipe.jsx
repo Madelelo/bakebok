@@ -9,6 +9,7 @@ import Specifications from "./Specs/Specifications";
 import InfoBox, { InfoBoxFull, InfoBoxHead } from "../Styling/InfoBox";
 import { Link as RouterLink } from "react-router-dom";
 import { Link, Text } from "@chakra-ui/react";
+import Difficulty from "./Difficulty";
 
 const Recipe = (props) => {
   const { recipes } = props;
@@ -60,6 +61,7 @@ const Recipe = (props) => {
           <InfoBoxHead>
             <Flex justify="space-between" align="center" gap={4}>
               <Title title={recipe.name} />
+              <Difficulty difficulty={recipe.difficulty} />
             </Flex>
             <Box>
               <Description description={recipe.description} />
@@ -68,7 +70,6 @@ const Recipe = (props) => {
               cooktime={recipe.cooktime}
               pan={recipe.pan}
               temperature={recipe.temperature}
-              difficulty={recipe.difficulty}
             />
           </InfoBoxHead>
 
