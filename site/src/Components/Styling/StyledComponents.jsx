@@ -5,7 +5,7 @@ import { GiCupcake } from "react-icons/gi";
 const StyledIcon = (props) => {
   const { icon } = props;
   return (
-    <Icon as={icon} mr="10" justify="space-around" color="dpink" w="8" h="8" />
+    <Icon as={icon} mr={{ base: 2, md: 3 }} flexShrink="0" color="dpink" w="7" h="7" />
   );
 };
 export default StyledIcon;

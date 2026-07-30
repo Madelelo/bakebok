@@ -1,7 +1,8 @@
 import React from "react";
-import { Flex, Box } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { InfoBoxSpecs } from "../Styling/InfoBox";
-import { DifficultyIcon } from "../Styling/StyledComponents";
+import { GiCupcake } from "react-icons/gi";
+import StyledIcon from "../Styling/StyledComponents";
 
 const Difficulty = (props) => {
   const { difficulty } = props;
@@ -10,15 +11,12 @@ const Difficulty = (props) => {
     return null;
   }
 
+  const labels = { 1: "Enkel", 2: "Middels", 3: "Krevende" };
+
   return (
     <InfoBoxSpecs>
-      <Flex justifyContent="center" flexFlow="column wrap" flexShrink="0">
-        <Box>
-          <DifficultyIcon color={difficulty > 0 ? "dpink" : "lpink"} />
-          <DifficultyIcon color={difficulty > 1 ? "dpink" : "lpink"} />
-          <DifficultyIcon color={difficulty > 2 ? "dpink" : "lpink"} />
-        </Box>
-      </Flex>
+      <StyledIcon icon={GiCupcake} />
+      <Text><Text as="span" fontWeight="semibold">Nivå</Text><br />{labels[difficulty] || difficulty}</Text>
     </InfoBoxSpecs>
   );
 };

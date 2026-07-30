@@ -10,7 +10,7 @@ const Instructions = (props) => {
   }
 
   return (
-    <Box>
+    <Box maxW="70ch" mx="auto">
       <Text textStyle="h3">Instruksjoner:</Text>
       <Divider
         orientation="horizontal"

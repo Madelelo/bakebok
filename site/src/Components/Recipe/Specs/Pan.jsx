@@ -11,11 +11,20 @@ const Pan = (props) => {
     return null;
   }
 
+  const shapeLabels = {
+    Round: "Rund",
+    Square: "Firkantet",
+    Rectangle: "Rektangulær",
+    Loaf: "Brødform",
+  };
+  const shape = shapeLabels[pan.shape] || pan.shape;
+  const size = pan.size_value ? `${pan.size_value} ${pan.size_unit || "cm"}` : null;
+
   return (
     <InfoBoxSpecs>
       <StyledIcon icon={GiResize} />
       <Flex justify="row" align="center" wrap="wrap">
-        <Text> {pan.shape} </Text>
+        <Text><Text as="span" fontWeight="semibold">Form</Text><br />{shape}{size ? `, ${size}` : ""}</Text>
       </Flex>
     </InfoBoxSpecs>
   );

@@ -40,21 +40,24 @@ export const theme = extendTheme({
       textColor: "dteal",
     },
     h3: {
+      fontSize: { base: "18px", lg: "20px" },
       fontWeight: "semibold",
-      lineHeight: "80%",
-      textColor: "mteal",
+      lineHeight: "1.3",
+      textColor: "dteal",
     },
     body_list: {
-      fontSize: { base: "8px", sm: "10px", lg: "14px" },
-      lineHeight: "150%",
+      fontSize: "16px",
+      lineHeight: "1.65",
       textColor: "black",
     },
     body: {
-      fontSize: { base: "10px", sm: "10px", lg: "14px" },
+      fontSize: "16px",
+      lineHeight: "1.65",
       textColor: "black",
     },
     byline: {
-      fontSize: { base: "14px", sm: "14px", lg: "16px" },
+      fontSize: "16px",
+      lineHeight: "1.65",
       textColor: "black",
     },
   },
@@ -80,4 +83,19 @@ export const theme = extendTheme({
     },
   },
   components: {},
+  styles: {
+    global: {
+      body: {
+        color: "black",
+        bg: "white",
+      },
+      "button, a": {
+        _focusVisible: {
+          outline: "3px solid",
+          outlineColor: "yellow",
+          outlineOffset: "3px",
+        },
+      },
+    },
+  },
 });

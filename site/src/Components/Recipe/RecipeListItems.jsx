@@ -8,7 +8,7 @@ const RecipeListItems = (props) => {
   return (
     <>
       {recipeList
-        .filter((recipe) => recipe.category === category)
+        .filter((recipe) => (recipe.category || "Annet") === category)
         .map((recipe, index) => {
           if (!recipe.slug) {
             return (
