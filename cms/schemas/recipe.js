@@ -114,15 +114,6 @@ export default {
       },
     },
     {
-      name: "instructions",
-      title: "Instructions (legacy)",
-      type: "array",
-      of: [{ type: "reference", to: [{ type: "instruction" }] }],
-      description: "Kept temporarily while existing recipes are migrated.",
-      readOnly: true,
-      hidden: ({ document }) => Boolean(document?.instructionsV2),
-    },
-    {
       name: "instructionsV2",
       title: "Instructions",
       type: "array",
