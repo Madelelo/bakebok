@@ -32,24 +32,24 @@ const Instruction = (props) => {
         {number}
       </Flex>
 
-      <Box flex="1" minWidth="0">
+      <Box flex="1" minWidth="0" maxW="65ch">
         {instruction.title && (
           <Text
             mb="1"
             color="dteal"
-            fontSize={{ base: "sm", lg: "md" }}
+            fontSize={{ base: "18px", lg: "20px" }}
             fontWeight="semibold"
           >
             {instruction.title}
           </Text>
         )}
-        <Text textStyle="body" lineHeight="1.7">
+        <Text fontSize={{ base: "18px", lg: "20px" }} lineHeight="1.75">
           {instruction.text || instruction.name}
         </Text>
 
         {instruction.tip && (
           <Box mt="2">
-            <Text textStyle="body" fontStyle="italic">
+            <Text fontSize="18px" lineHeight="1.7" fontStyle="italic">
               <Text as="span" color="dteal" fontWeight="bold">
                 Tips: {" "}
               </Text>

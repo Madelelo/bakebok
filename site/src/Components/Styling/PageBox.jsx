@@ -5,7 +5,7 @@ const PageText = (props) => {
   const { children } = props;
 
   return (
-    <Text fontSize="14px" paddingBottom="4">
+    <Text fontSize="16px" lineHeight="1.65" paddingBottom="4">
       {children}
     </Text>
   );

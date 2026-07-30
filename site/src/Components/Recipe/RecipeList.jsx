@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "@chakra-ui/react";
+import { Container, Text } from "@chakra-ui/react";
 import {
   Accordion,
   AccordionItem,
@@ -10,24 +10,45 @@ import {
 import AccordionBox from "../Styling/AccordianBox";
 import RecipeListItems from "./RecipeListItems";
 
-const RecipeList = (props) => {
-  const { recipeList } = props;
+const preferredCategoryOrder = [
+  "Kaker og brownies",
+  "Kjeks og cookies",
+  "Brød og gjærbakst",
+  "Desserter",
+  "Frosting og tilbehør",
+  "Annet",
+];
 
-  if (!recipeList) {
-    return null;
-  }
-  const categories = [...new Set(recipeList.map((recipe) => recipe.category))];
+const RecipeList = (props) => {
+  const { recipeList = [] } = props;
+
+  const categories = [
+    ...new Set(recipeList.map((recipe) => recipe.category || "Annet")),
+  ].sort((a, b) => {
+    const aIndex = preferredCategoryOrder.indexOf(a);
+    const bIndex = preferredCategoryOrder.indexOf(b);
+    if (aIndex === -1 && bIndex === -1) return a.localeCompare(b, "nb");
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+    return aIndex - bIndex;
+  });
 
   return (
     <>
-      <Container maxW="container.md" p={10}>
-        <Container maxW="container.md" p={10}>
-          Velkommen til min bakebok! En samling med mine beste oppskirfter på en
-          fornuftig og reklamefri side.
+      <Container
+        maxW="container.md"
+        px={{ base: 4, md: 10 }}
+        py={{ base: 8, md: 10 }}
+      >
+        <Container maxW="container.md" px={0} pb={{ base: 8, md: 10 }}>
+          <Text fontSize="18px" lineHeight="1.7">
+            Velkommen til min bakebok! En samling med mine beste oppskrifter på
+            en fornuftig og reklamefri side.
+          </Text>
         </Container>
 
-        <Accordion allowToggle>
-          {categories.map((category) => (
+        <Accordion allowMultiple>
+            {categories.map((category) => (
             <AccordionItem
               key={category}
               borderColor="white"
@@ -44,7 +65,7 @@ const RecipeList = (props) => {
                 <RecipeListItems recipeList={recipeList} category={category} />
               </AccordionPanel>
             </AccordionItem>
-          ))}
+            ))}
         </Accordion>
       </Container>
     </>

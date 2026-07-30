@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Spinner, Container } from "@chakra-ui/react";
+import { Flex, Container, Skeleton, SkeletonText, Stack } from "@chakra-ui/react";
 import { useSanityContext } from "../SanityContext";
 import { useState, useEffect } from "react";
 import { PageH1, PageH2 } from "./Styling/PageBox";
@@ -28,7 +28,15 @@ const About = () => {
   }, [client, setData, pageQuery]);
 
   if (!data.length) {
-    return <Spinner m="10" p="4" color="teal" />;
+    return (
+      <Container maxW="3xl" py={12}>
+        <Stack spacing={6} aria-label="Laster innhold">
+          <Skeleton height="36px" width="45%" mx="auto" />
+          <Skeleton height="24px" width="70%" mx="auto" />
+          <SkeletonText noOfLines={6} spacing={4} skeletonHeight={4} />
+        </Stack>
+      </Container>
+    );
   }
 
   return (

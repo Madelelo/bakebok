@@ -3,6 +3,8 @@ import { Flex, Text, Divider } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <Flex direction="column" align="center" p={10}>
       <Divider
@@ -25,7 +27,7 @@ const Footer = () => {
         </Link>
 
         <Text textAlign="center" textStyle="body_list" color="mteal" p={5}>
-          av Madeleine Lorås, 2022
+          av Madeleine Lorås, {currentYear}
         </Text>
 
         <Link to="/about">
