@@ -115,10 +115,59 @@ export default {
     },
     {
       name: "instructions",
-      title: "Instructions",
+      title: "Instructions (legacy)",
       type: "array",
       of: [{ type: "reference", to: [{ type: "instruction" }] }],
-      description: "List of instructions",
+      description: "Kept temporarily while existing recipes are migrated.",
+      readOnly: true,
+      hidden: ({ document }) => Boolean(document?.instructionsV2),
+    },
+    {
+      name: "instructionsV2",
+      title: "Instructions",
+      type: "array",
+      description: "Ordered recipe instructions",
+      of: [
+        {
+          name: "instructionStep",
+          title: "Step",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Short title",
+              type: "string",
+              description: "Optional, for example: Make the dough",
+            },
+            {
+              name: "text",
+              title: "Instruction",
+              type: "text",
+              rows: 4,
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "tip",
+              title: "Tip",
+              type: "text",
+              rows: 2,
+              description: "Optional additional advice",
+            },
+          ],
+          preview: {
+            select: {
+              title: "title",
+              text: "text",
+            },
+            prepare({ title, text }) {
+              return {
+                title: title || text,
+                subtitle: title ? text : undefined,
+              };
+            },
+          },
+        },
+      ],
     },
     {
       name: "temperature",

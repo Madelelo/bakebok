@@ -5,18 +5,23 @@ import Recipe from "./Recipe/Recipe";
 import RecipeList from "./Recipe/RecipeList";
 import Navbar from "./Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Box, Spinner } from "@chakra-ui/react";
+import { Box, Spinner, Text } from "@chakra-ui/react";
 import Footer from "./Footer";
 import About from "./About";
 
 const Page = () => {
   const { client } = useSanityContext();
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const recipeQuery = `
   *[ _type == "recipe"] | order(name){
     name, description, cooktime, oven, temperature, pan, category, slug, difficulty,
-    instructions[]-> {_id, name},
+    "instructions": coalesce(
+      instructionsV2[]{_key, title, text, tip},
+      instructions[]->{"_key": _id, "text": name}
+    ),
     ingredients[]{amount, unit, ingredient-> {name, cupconverter, _id}},
   }
   `;
@@ -27,15 +32,28 @@ const Page = () => {
         .fetch(recipeQuery)
         .then((data) => {
           setData(data);
+          setError(null);
         })
         .catch((error) => {
           console.error(error);
+          setError("Could not load recipes from Sanity.");
+        })
+        .finally(() => {
+          setIsLoading(false);
         });
     }
   }, [client, setData, recipeQuery]);
 
-  if (!data.length) {
+  if (isLoading) {
     return <Spinner m="10" p="4" color="teal" />;
+  }
+
+  if (error) {
+    return <Text m="10">{error}</Text>;
+  }
+
+  if (!data.length) {
+    return <Text m="10">No recipes found.</Text>;
   }
 
   return (
