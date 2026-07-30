@@ -10,6 +10,8 @@ En samling av mine oppskrifter på den måten jeg vil lese de. Sjekk de ut på h
 - [Chakra UI](https://chakra-ui.com/)
 - [Vercel](https://vercel.com/)
 
+- Alle 2026 oppdateringer er utviklet med ChatGPT 5.6 Sol.
+
 ### Kjør prosjektet lokalt
 
 Frontend og Sanity Studio er to separate npm-prosjekter.
