@@ -38,7 +38,8 @@ export const convertTemperature = (temperature, idiot) => {
   }
 
   if (unit === "F" && !idiot) {
-    return { ...temperature, value: Math.round(((value - 32) * 5) / 9), unit: "C" };
+    const celsius = ((value - 32) * 5) / 9;
+    return { ...temperature, value: Math.round(celsius / 5) * 5, unit: "C" };
   }
 
   return temperature;
