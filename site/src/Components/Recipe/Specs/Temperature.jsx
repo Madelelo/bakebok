@@ -33,7 +33,8 @@ export const convertTemperature = (temperature, idiot) => {
   }
 
   if (unit === "C" && idiot) {
-    return { ...temperature, value: Math.round((value * 9) / 5 + 32), unit: "F" };
+    const fahrenheit = (value * 9) / 5 + 32;
+    return { ...temperature, value: Math.round(fahrenheit / 5) * 5, unit: "F" };
   }
 
   if (unit === "F" && !idiot) {
