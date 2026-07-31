@@ -5,20 +5,40 @@ import { InfoBoxSpecs } from "../../Styling/InfoBox";
 import StyledIcon from "../../Styling/StyledComponents";
 
 const Temperature = (props) => {
-  const { temperature } = props;
+  const { temperature, idiot } = props;
 
   if (!temperature) {
     return null;
   }
 
+  const convertedTemperature = convertTemperature(temperature, idiot);
+
   return (
     <InfoBoxSpecs>
       <StyledIcon icon={GiHeatHaze} />
       <Flex justify="row">
-        <Text><Text as="span" fontWeight="semibold">Temperatur</Text><br />{temperature?.value} °{temperature?.unit}</Text>
+        <Text><Text as="span" fontWeight="semibold">Temperatur</Text><br />{convertedTemperature.value} °{convertedTemperature.unit}</Text>
       </Flex>
     </InfoBoxSpecs>
   );
 };
 
 export default Temperature;
+
+export const convertTemperature = (temperature, idiot) => {
+  const { value, unit } = temperature;
+
+  if (value == null) {
+    return temperature;
+  }
+
+  if (unit === "C" && idiot) {
+    return { ...temperature, value: Math.round((value * 9) / 5 + 32), unit: "F" };
+  }
+
+  if (unit === "F" && !idiot) {
+    return { ...temperature, value: Math.round(((value - 32) * 5) / 9), unit: "C" };
+  }
+
+  return temperature;
+};
