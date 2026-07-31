@@ -11,7 +11,13 @@ const Ingredient = (props) => {
   const { unit, amount } = convert(ingredientForRecipe, idiot);
 
   return (
-    <Grid templateColumns={{ base: "4rem 4.5rem 1fr", md: "5rem 5rem 1fr" }} gap={2} textStyle="body_list" py={1}>
+    <Grid
+      templateColumns={{ base: "4rem 4.5rem 1fr", md: "2.5rem 3.5rem 1fr" }}
+      gap={{ base: 2, md: 1 }}
+      fontSize="14px"
+      lineHeight="1.5"
+      py={0.5}
+    >
       <GridItem textAlign="right">{amount}</GridItem>
       <GridItem>{unit}</GridItem>
       <GridItem>{ingredientForRecipe.ingredient.name} </GridItem>

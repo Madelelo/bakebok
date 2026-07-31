@@ -11,23 +11,25 @@ const Instruction = (props) => {
   return (
     <Flex
       align="flex-start"
-      gap={{ base: 3, md: 4 }}
-      py={{ base: 4, md: 5 }}
+      gap={3}
+      py={{ base: 3, md: 3 }}
       borderBottom={isLast ? "none" : "1px solid"}
       borderColor="lpink"
     >
       <Flex
-        align="center"
+        align="flex-start"
         justify="center"
         flexShrink={0}
-        width={{ base: 7, md: 8 }}
-        height={{ base: 7, md: 8 }}
+        width={7}
+        height={7}
         border="2px solid"
         borderColor="mteal"
         bg="lteal"
         color="dteal"
         fontSize={{ base: "sm", md: "md" }}
         fontWeight="bold"
+        lineHeight="1.5"
+        pt="1px"
       >
         {number}
       </Flex>
@@ -37,19 +39,20 @@ const Instruction = (props) => {
           <Text
             mb="1"
             color="dteal"
-            fontSize={{ base: "18px", lg: "20px" }}
+            fontSize="14px"
             fontWeight="semibold"
+            lineHeight="1.5"
           >
             {instruction.title}
           </Text>
         )}
-        <Text fontSize={{ base: "18px", lg: "20px" }} lineHeight="1.75">
+        <Text fontSize="14px" lineHeight="1.5">
           {instruction.text || instruction.name}
         </Text>
 
         {instruction.tip && (
-          <Box mt="2">
-            <Text fontSize="18px" lineHeight="1.7" fontStyle="italic">
+          <Box mt="1.5">
+            <Text fontSize="14px" lineHeight="1.5" fontStyle="italic">
               <Text as="span" color="dteal" fontWeight="bold">
                 Tips: {" "}
               </Text>

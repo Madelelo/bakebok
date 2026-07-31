@@ -5,7 +5,7 @@ const InfoBox = (props) => {
   const { children } = props;
 
   return (
-    <GridItem colSpan={6} p={{ base: 4, md: 5 }} layerStyle="pinkShadow">
+    <GridItem colSpan={{ base: 6, md: 3 }} p={{ base: 4, md: 4 }} layerStyle="pinkShadow">
       {children}
     </GridItem>
   );
@@ -17,7 +17,7 @@ export const InfoBoxFull = (props) => {
   const { children } = props;
 
   return (
-    <GridItem colSpan={6} p={{ base: 4, md: 5 }} layerStyle="pinkShadow">
+    <GridItem colSpan={{ base: 6, md: 3 }} p={{ base: 4, md: 4 }} layerStyle="pinkShadow">
       {children}
     </GridItem>
   );
@@ -27,7 +27,7 @@ export const InfoBoxHead = (props) => {
   const { children } = props;
 
   return (
-    <GridItem colSpan={6} p={{ base: 4, md: 5 }} layerStyle="blueShadow">
+    <GridItem colSpan={6} p={{ base: 4, md: 4 }} layerStyle="blueShadow">
       {children}
     </GridItem>
   );
@@ -38,9 +38,10 @@ export const InfoBoxSpecs = (props) => {
 
   return (
     <Flex
-      alignItems="center"
+      alignItems="flex-start"
       justifyContent="flex-start"
-      textStyle="body"
+      fontSize="14px"
+      lineHeight="1.5"
       minW="0"
       py="1"
     >

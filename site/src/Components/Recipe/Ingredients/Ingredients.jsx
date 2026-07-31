@@ -11,10 +11,16 @@ const Ingredients = (props) => {
   }
   return (
     <Box>
-      <Box display="flex" justifyContent="space-between">
-        <Text textStyle="h3">Ingredienser:</Text>
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
+        gap={3}
+        mb={2}
+      >
+        <Text textStyle="h3">Ingredienser</Text>
 
-        <FormLabel display="flex" alignItems="center">
+        <FormLabel display="flex" alignItems="center" m={0}>
           <Text fontSize="xs" paddingInline="2" textColor="dpink">
             Vanlig
           </Text>
@@ -34,6 +40,7 @@ const Ingredients = (props) => {
         borderColor="yellow"
         color="yellow"
         borderBottomWidth="2px"
+        mb={2}
       />
 
       {ingredients.map((ingredientForRecipe, index) => (

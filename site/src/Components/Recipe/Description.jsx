@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "@chakra-ui/react";
 import { Text, Box } from "@chakra-ui/react";
 
 const Description = (props) => {
@@ -10,8 +9,8 @@ const Description = (props) => {
   }
 
   return (
-    <Box>
-      <Text textStyle="byline">{description}</Text>
+    <Box py={{ base: 2, md: 3 }}>
+      <Text fontSize="14px" lineHeight="1.5">{description}</Text>
     </Box>
   );
 };

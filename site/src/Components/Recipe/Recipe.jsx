@@ -53,7 +53,7 @@ const Recipe = (props) => {
           to="/"
           display="inline-block"
           mx={4}
-          mt={{ base: 6, md: 8 }}
+          mt={{ base: 4, md: 5 }}
           color="dteal"
           fontSize="16px"
           fontWeight="bold"
@@ -61,10 +61,11 @@ const Recipe = (props) => {
           ← Tilbake til alle oppskrifter
         </Link>
         <Grid
-          m={4}
-          templateRows="repeat(3)"
+          mx={4}
+          mt={3}
+          mb={{ base: 6, md: 8 }}
           templateColumns="repeat(6, 1fr)"
-          gap={4}
+          gap={{ base: 3, md: 4 }}
         >
           <InfoBoxHead>
             <Flex justify="space-between" align="center" gap={4}>
