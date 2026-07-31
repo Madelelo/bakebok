@@ -11,13 +11,13 @@ const Instructions = (props) => {
 
   return (
     <Box maxW="70ch" mx="auto">
-      <Text textStyle="h3">Instruksjoner:</Text>
+      <Text textStyle="h3" mb={2}>Instruksjoner</Text>
       <Divider
         orientation="horizontal"
         borderColor="yellow"
         color="yellow"
         borderBottomWidth="2px"
-        paddingBottom="2"
+        mb={1}
       />
 
       {instructions.map((instruction, index) => (

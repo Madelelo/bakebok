@@ -10,9 +10,9 @@ const Specifications = (props) => {
   return (
     <SimpleGrid
       columns={{ base: 1, sm: 3 }}
-      spacing={{ base: 3, md: 4 }}
-      mt={6}
-      pt={5}
+      spacing={{ base: 1, sm: 3 }}
+      mt={{ base: 4, md: 3 }}
+      pt={{ base: 3, md: 2 }}
       borderTop="2px solid"
       borderColor="yellow"
     >
