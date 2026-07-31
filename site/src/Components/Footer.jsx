@@ -27,7 +27,7 @@ const Footer = () => {
         </Link>
 
         <Text textAlign="center" textStyle="body_list" color="mteal" p={5}>
-          av Madeleine Lorås, {currentYear}
+          av Madeleine Lorås Hollund, {currentYear}
         </Text>
 
         <Link to="/about">
